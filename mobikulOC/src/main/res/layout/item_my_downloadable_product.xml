@@ -1,0 +1,169 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app2="http://schemas.android.com/tools"
+    xmlns:app3="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/my_downloads_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/innerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="6dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="6dp"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/order_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_no"
+                            android:textSize="@dimen/heading_size_medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/download_btn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/mycirclecustomerimage"
+                            android:padding="10dp"
+                            app3:srcCompat="@drawable/download_icon" />
+                    </RelativeLayout>
+
+                    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
+
+                        <TableRow android:padding="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text="@string/name"
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text=" : "
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text=":"
+                                android:textColor="@color/gray"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                        <TableRow android:padding="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text="@string/size"
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text=" : "
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/size"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text=":"
+                                android:textColor="@color/gray"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                        <TableRow android:padding="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text="@string/date"
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text=" : "
+                                android:textColor="@color/gray" />
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:text=":"
+                                android:textColor="@color/gray"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:orientation="vertical">-->
+
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/download_btn"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="40dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:background="@drawable/mycirclecustomerimage"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:src="@drawable/downloadgreen" />&ndash;&gt;-->
+                <!--</LinearLayout>-->
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</layout>
+

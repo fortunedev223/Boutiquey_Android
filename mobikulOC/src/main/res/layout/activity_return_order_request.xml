@@ -1,0 +1,277 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="webkul.opencart.mobikul.activity.ReturnOrderRequest">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.ReturnOrderRequestHandler" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.model.ReturnOrderRequestModel.ReturnOrderRequest" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/submit"
+                android:layout_marginBottom="@dimen/padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/card_elevetion_4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding"
+                        android:text="@string/order_information"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <EditText
+                        android:id="@+id/fname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/signupFormFirstNameTitle"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.firstname}" />
+
+                    <EditText
+                        android:id="@+id/lname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/signupFormLastNameTitle"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.lastname}" />
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/email"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.email}" />
+
+                    <EditText
+                        android:id="@+id/telephone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/telephone"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.telephone}" />
+
+                    <EditText
+                        android:id="@+id/order_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/order_id"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.orderId}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/date_added"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/card_elevetion_4"
+                                android:layout_marginTop="@dimen/card_elevetion_4"
+                                android:background="@drawable/border"
+                                android:hint="@string/date_added"
+                                android:padding="@dimen/padding"
+                                android:text="@{data.dateOrdered}" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/card_elevetion_2"
+                            android:layout_weight=".9"
+                            android:background="@drawable/border"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/select_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/card_elevetion_4"
+                                android:padding="@dimen/card_elevetion_2"
+                                app:srcCompat="@drawable/date_calender" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding"
+                        android:text="@string/product_info"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <EditText
+                        android:id="@+id/product_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/product_name"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.product}" />
+
+                    <EditText
+                        android:id="@+id/product_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/product_code_"
+                        android:padding="@dimen/padding"
+                        android:text="@{data.model}" />
+
+                    <EditText
+                        android:id="@+id/product_qty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border"
+                        android:hint="@string/quantity"
+                        android:padding="@dimen/padding"
+                        android:text="1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="@dimen/padding"
+                        android:text="@string/reason_of_return"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <Spinner
+                        android:id="@+id/reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/card_elevetion_4"
+                        android:layout_marginTop="@dimen/card_elevetion_4"
+                        android:background="@drawable/border" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding"
+                        android:text="@string/product_is_opened"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin5x"
+                        android:paddingRight="@dimen/margin5x">
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:checked="true"
+                            android:text="@string/no" />
+                    </RadioGroup>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/card_elevetion_4"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border"
+                        android:gravity="top"
+                        android:id="@+id/comment"
+                        android:hint="@string/faulty_other_details"
+                        android:padding="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        tools:ignore="RtlCompat" />
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:onClick="@{(v)->handler.onClickSubmit()}"
+                android:padding="@dimen/padding_heading"
+                android:text="@string/submit"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

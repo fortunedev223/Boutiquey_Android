@@ -1,0 +1,101 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.GetAddressAdaperModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.GetAddressHandler" />
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_elevetion_4"
+        android:layout_marginTop="@dimen/card_elevetion_4"
+        card_view:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/addrbookdefaultValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/padding"
+                android:paddingTop="@dimen/margin5x"
+                android:paddingRight="@dimen/padding"
+                android:paddingBottom="@dimen/margin5x"
+                android:singleLine="false"
+                android:textSize="12sp"
+                tools:text="test test  \ntest\ntest address\ntest city 432342\nAberdeen\nUnited Kingdom"
+                android:text="@{data.value}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray_color1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5x"
+                android:visibility="visible">
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/editBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    card_view:cornerRadius="@dimen/margin_8"
+                    android:clickable="true"
+                    android:onClick="@{(v)->handler.onClickEdit(v,data)}"
+                    android:padding="5dp"
+                    android:text="@string/edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="@dimen/padding_6"
+                    android:layout_weight="1"
+                    android:onClick="@{(v)->handler.onClickDelete(v,data)}"
+                    android:padding="5dp"
+                    card_view:cornerRadius="@dimen/margin_8"
+                    android:text="@string/delete"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/edit_option"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app2:srcCompat="@drawable/edit_address" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

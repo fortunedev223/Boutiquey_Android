@@ -1,0 +1,180 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.ShippingAddressHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="webkul.opencart.mobikul.fragment.PaymentAddress">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/billing_checkout_continue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
+
+                <!-- TODO: Update blank fragment layout -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/main_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_bottom_billing">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_heading"
+                            android:text="@string/shipping_address"
+                            android:textColor="@color/color_gray"
+                            android:textSize="@dimen/heading_size_large"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/light_gray" />
+
+                        <LinearLayout
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/padding_heading" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/light_gray" />
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_card">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/default_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/padding"
+                                    android:text="@string/edit_change_address"
+                                    android:textSize="@dimen/heading_size_medium" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/light_gray"
+                                    android:visibility="gone" />
+
+                                <Spinner
+                                    android:id="@+id/countrySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/padding"
+                                    android:visibility="gone" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/light_gray"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/edit_change_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/padding_heading"
+                                    android:text="@string/add_new_address"
+                                    android:textSize="@dimen/heading_size_medium"
+                                    android:visibility="gone" />
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:onClick="@{(v)->handler.onClickEditChange(v)}"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:visibility="visible" />-->
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <CheckBox
+                            android:id="@+id/ship_to_this_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding"
+                            android:padding="@dimen/padding_heading"
+                            android:text="@string/shipping_to_this_address"
+                            android:textColor="@color/gray"
+                            android:visibility="gone" />
+
+
+                        <CheckBox
+                            android:id="@+id/gdpr_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/padding"
+                            android:padding="@dimen/padding_heading"
+                            android:visibility="gone"
+                            android:text="@string/gdpr_check_value"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/newaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_6"
+                    android:onClick="@{(v)->handler.onClickNewAddress(v)}"
+                    android:visibility="gone"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_heading"
+                        android:text="@string/add_new_address"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/heading_size_medium"
+                        app:background="@drawable/ripple_effect" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/billing_checkout_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_elevetion_4"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{(v) -> handler.onClickedContinue(v)}"
+            android:padding="@dimen/button_padding"
+            android:text="@string/continue1" />
+    </RelativeLayout>
+
+
+</layout>

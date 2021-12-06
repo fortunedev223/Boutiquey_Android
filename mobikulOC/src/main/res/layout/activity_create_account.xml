@@ -1,0 +1,632 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.twoWayBindingModel.RegisterAccountModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.CreateAccountHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/registerScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/appbar"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context="com.webkul.mcom.CreateAccountActivity">
+
+                <LinearLayout
+                    android:id="@+id/mainContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/registerHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:padding="10dp"
+                        android:text="@string/signupFormHeading"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/your_personal_details"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/customer_group"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/customer_group"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:visibility="gone" />
+
+                            <RadioGroup
+                                android:id="@+id/group_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <RadioButton
+                                    android:id="@+id/yes1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/default1" />
+
+                                <RadioButton
+                                    android:id="@+id/no1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:checked="true"
+                                    android:text="@string/special" />
+                            </RadioGroup>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/accent_color" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/profile_image"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/padding"
+                                android:src="@drawable/placeholder_customer_profile"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding"
+                                android:text="@string/your_personal_details"
+                                android:textColor="#424242"
+                                android:textSize="@dimen/text_size_medium"
+                                android:textStyle="bold" />
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/fnameTV"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding"
+                                android:hint="@string/signupFormFirstNameTitle">
+
+                                <EditText
+                                    android:id="@+id/firstname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.firstName}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/lnameTV"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/lastname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/signupFormLastNameTitle"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.lastName}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/emailAddressTV"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/email_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/accinfoemailTitle"
+                                    android:inputType="textEmailAddress"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.email}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/telephoneTv"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/telephone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/telephone"
+                                    android:inputType="number"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.telephone}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_heading"
+                                android:text="@string/fax"
+                                android:textSize="@dimen/heading_size_medium"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/faxTV"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/fax"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/fax"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.fax}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/addBookheading"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/your_address"
+                            android:textColor="#424242"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/addrDataContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/padding"
+                            android:orientation="vertical"
+                            tools:context="com.webkul.mcom.DashboardActivity">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding"
+                                android:paddingBottom="@dimen/margin5x"
+                                android:text="@string/company"
+                                android:textSize="@dimen/heading_size_medium"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/addBookCompanyTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true">
+
+                                <EditText
+                                    android:id="@+id/addBookCompanyValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/company"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.company}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/addBookStreetAddTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/addBookStreetAddValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/address_1"
+                                    android:inputType="textEmailAddress"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.address1}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_heading"
+                                android:text="@string/address_2"
+                                android:textSize="@dimen/heading_size_medium"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/addBookStreetAddSecondTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/addBookStreetAddSecondValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/address_2"
+                                    android:inputType="textEmailAddress"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.address2}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/addBookCityTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/addBookCityValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/city"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.city}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/addBookZipTitle"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="@dimen/padding_heading">
+
+                                <EditText
+                                    android:id="@+id/addBookZipValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/zip"
+                                    android:padding="@dimen/padding"
+                                    android:singleLine="true"
+                                    android:text="@={data.zip}"
+                                    android:textColorHint="#9F9F9F" />
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <TextView
+                                android:id="@+id/addBookCountryTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_8"
+                                android:text="@string/country"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#000000"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_heading"
+                                android:background="@drawable/border">
+
+                                <Spinner
+                                    android:id="@+id/countrySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:spinnerMode="dropdown" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_heading"
+                                android:background="@drawable/border">
+
+                                <Spinner
+                                    android:id="@+id/statesSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:spinnerMode="dropdown" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/addBookStateTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_8"
+                                android:text="@string/state"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#000000"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/passwordLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="@dimen/padding"
+                                android:orientation="vertical">
+
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/password_TV"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:hint="@string/signupFormPasswordTitle"
+                                    app:hintEnabled="true"
+                                    app:passwordToggleEnabled="true">
+
+                                    <EditText
+                                        android:id="@+id/password"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="30dp"
+                                        android:inputType="textPassword"
+                                        android:padding="@dimen/padding_6"
+                                        android:singleLine="true"
+                                        android:text="@={data.password}"
+                                        android:textColorHint="#9F9F9F" />
+                                </android.support.design.widget.TextInputLayout>
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/confirm_password_tv"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="@dimen/padding"
+                                    android:hint="@string/signupFormConfPasswordTitle"
+                                    app:hintEnabled="true"
+                                    app:passwordToggleEnabled="true">
+
+                                    <EditText
+                                        android:id="@+id/confirmation"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="30dp"
+                                        android:inputType="textPassword"
+                                        android:padding="@dimen/padding_6"
+                                        android:singleLine="true"
+                                        android:text="@={data.confirmPassword}"
+                                        android:textColorHint="#9F9F9F" />
+                                </android.support.design.widget.TextInputLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/become_seller"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/store_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/store_name"
+                            android:padding="@dimen/padding"
+                            android:visibility="gone" />
+
+                        <RadioGroup
+                            android:id="@+id/is_subscribed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/margin5x">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/newsletter"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                            <RadioButton
+                                android:id="@+id/yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/yes" />
+
+                            <RadioButton
+                                android:id="@+id/no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/no" />
+                        </RadioGroup>
+
+                        <CheckBox
+                            android:id="@+id/tAndC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="14dp"
+                            android:layout_marginTop="@dimen/padding"
+                            android:text="@string/i_have_read_and_agree_to_the_privacy_policy_" />
+
+                        <CheckBox
+                            android:id="@+id/sameBillingAndDelivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="14dp"
+                            android:text="@string/my_delivery_and_billing_addresses_are_the_same_"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:background="@color/white">
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/accent_color"
+                android:onClick="@{(v)->handler.onClickRegisterAccount(v,data)}"
+                android:padding="@dimen/padding"
+                android:text="@string/signupFormRegisterTitle"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/heading_size_medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,128 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="valid"
+            type="webkul.opencart.mobikul.utils.Validation" />
+
+        <import type="android.view.View" />
+
+        <import type="android.R.color" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.HomePageAdapteModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.RecentViewedHandler" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5x">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:padding="@dimen/margin5x"
+                    app:loadImage="@{data.ImageUrl}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:layout_marginLeft="@dimen/margin5x"
+                    android:layout_marginRight="@dimen/margin5x"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin5x">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_6"
+                        android:text="@{data.product}"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold"
+                        tools:text="Product Name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/margin5x"
+                        android:paddingRight="@dimen/margin5x"
+                        android:paddingTop="@dimen/card_elevetion_4">
+
+
+                        <TextView
+                            android:id="@+id/productprice"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".2"
+                            android:paddingLeft="@dimen/card_elevetion_4"
+                            android:paddingRight="@dimen/card_elevetion_4"
+                            android:text="@{data.price}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@{valid.checkSpecialPrice(data.specialPrice)?  @color/light_gray: @color/v3_price_color}"
+                            android:textSize="@dimen/text_size_medium1"
+                            android:textStyle="bold"
+                            android:visibility="@{valid.checkSpecial(data.specialPrice)? View.VISIBLE:View.VISIBLE}"
+                            tools:text="$122" />
+
+                        <TextView
+                            android:id="@+id/special_product_price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".4"
+                            android:paddingLeft="@dimen/card_elevetion_4"
+                            android:paddingRight="@dimen/card_elevetion_4"
+                            android:text="@{valid.checkSpecialAtHome(data.specialPrice,data.formattedSpecial,data.price)}"
+                            android:textColor="@color/v3_price_color"
+                            android:textSize="@dimen/text_size_medium1"
+                            android:textStyle="bold"
+                            android:visibility="@{valid.checkSpecialPrice(data.specialPrice)? View.VISIBLE:View.GONE}"
+                            tools:text="$122" />
+
+                        <ImageView
+                            android:id="@+id/wishlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:onClick="@{(v)->handler.onClickAddToWishlist(v,data)}"
+                            android:src="@{data.wishlist_status? @drawable/wishlist_selected :@drawable/wishlist_v3_unselected}"
+                            tools:src="@drawable/wishlist_v3_unselected" />
+                        <!--app:srcCompat="@drawable/wishlist_v3_unselected"-->
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

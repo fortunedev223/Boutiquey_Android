@@ -1,0 +1,49 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.SubCategoryV3ThemeAdapterModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.SubCategoryV3Handler" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_elevetion_2"
+        android:elevation="@dimen/card_elevetion_2"
+        android:onClick="@{(v)->handler.onClickCategory(v,data)}"
+        app:cardCornerRadius="@dimen/card_elevetion_4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/transparent_grey"
+                android:padding="@dimen/padding"
+                android:text="@{data.categoryName}"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                tools:text="CategoryName" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="proid" format="string"></attr>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="proid" />
+    </declare-styleable>
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <attr name="myLinkColor" format="reference" />
+
+    <declare-styleable name="MaterialTextField">
+        <attr name="mtf_cardCollapsedHeight" format="dimension"/>
+        <attr name="mtf_labelColor" format="color"/>
+        <attr name="mtf_image" format="reference"/>
+        <attr name="mtf_hasFocus" format="boolean"/>
+        <attr name="mtf_animationDuration" format="integer"/>
+        <attr name="mtf_openKeyboardOnFocus" format="boolean"/>
+        <attr name="mtf_backgroundColor" format="color"/>
+    </declare-styleable>
+
+    <!--    developing new theme -->
+    <!-- 	<attr name="pageMargin" format="dimension" /> -->
+    <!-- 	<attr name="appColor" format="color" /> -->
+    <!-- 	<attr name="elvDrawerHeaderColor" format="color" /> -->
+    <!-- 	<attr name="newPriceTextColor" format="color" /> -->
+    <!-- 	<attr name="dashboardActions" format="color" /> -->
+</resources>

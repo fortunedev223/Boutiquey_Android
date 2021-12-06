@@ -1,0 +1,33 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray_color"
+            android:padding="@dimen/card_elevetion_2"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:text="Test Option" />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@color/light_gray_color1"
+            android:textAlignment="center"
+            android:padding="@dimen/card_elevetion_2"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:text="Test Option" />
+    </LinearLayout>
+</layout>

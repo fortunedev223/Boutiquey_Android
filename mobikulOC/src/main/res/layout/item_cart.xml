@@ -1,0 +1,384 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    app:ignore="NamespaceTypo">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import
+            alias="valid"
+            type="webkul.opencart.mobikul.utils.Validation" />
+
+        <import type="android.R.color" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.CartAdapterModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.CartHandler" />
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/viewgap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_elevetion_4"
+        android:layout_marginTop="@dimen/card_elevetion_4"
+        card_view:cardCornerRadius="0dp">
+
+        <RelativeLayout
+            android:id="@+id/cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->handler.onClickProduct(v,data)}"
+                android:orientation="horizontal"
+                android:padding="@dimen/card_elevetion_4">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4">
+
+                    <ImageView
+                        android:id="@+id/productImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        app:dominantColor="@{data.dominantColor}"
+                        app:loadImage="@{data.ImageUrl}" />
+
+                    <ImageView
+                        android:id="@+id/moveTOWishList"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignEnd="@+id/productImage"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignRight="@+id/productImage"
+                        android:layout_gravity="top"
+                        android:visibility="gone"
+                        app2:srcCompat="@drawable/wishlishv3_product_page" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_6">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/card_elevetion_4"
+                            android:paddingRight="@dimen/card_elevetion_4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_weight="8"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/product_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto"
+                                    android:paddingRight="@dimen/card_elevetion_4"
+                                    android:text="@{data.productTitle}"
+                                    android:textColor="@color/product_page_text_color"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold"
+                                    app:text="WD HD32DL400Xi 80 CM (32) HD READY LED Television" />
+
+                                <TextView
+                                    android:id="@+id/product_customOptions"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.productModel}"
+                                    android:textColor="@color/gray"
+                                    android:textSize="10.0sp"
+                                    app:text="WD HD32" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:visibility="@{valid.checkForLength(data.reward)?View.VISIBLE:View.GONE}">
+
+                                    <TextView
+                                        android:id="@+id/sellerStringTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/product_name"
+                                        android:text="@{data.reward}"
+                                        android:textColor="?attr/colorAccent"
+                                        android:textSize="12sp"
+                                        android:visibility="visible"
+                                        app:text="300" />
+                                </LinearLayout>
+                                <!--<TextView-->
+                                <!--android:id="@+id/option_txt"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/select_Option"-->
+                                <!--android:textColor="@color/gray"-->
+                                <!--android:textSize="12sp"-->
+                                <!--android:visibility="@{data.hasOption?View.VISIBLE:View.GONE}" />-->
+
+                                <LinearLayout
+                                    android:id="@+id/optionsLL"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="vertical" />
+
+
+                                <LinearLayout
+                                    android:id="@+id/errorLL"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10.0dip"
+                                    android:layout_marginStart="10.0dip"
+                                    android:orientation="vertical"
+                                    android:visibility="gone" />
+
+
+                                <TextView
+                                    android:id="@+id/qtyTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12.0sp"
+                                    android:visibility="gone" />
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/unit_price"
+                                    android:textColor="@color/light_gray"
+                                    android:textSize="10.0sp" />
+
+                                <TextView
+                                    android:id="@+id/product_price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="@dimen/padding"
+                                    android:text="@{data.productPrice}"
+                                    android:textColor="@color/v3_price_color"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/subtotal_cart"
+                                    android:textColor="@color/light_gray"
+                                    android:textSize="10.0sp" />
+
+                                <TextView
+                                    android:id="@+id/subTotal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.subTotal}"
+                                    android:textColor="@color/black"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/deleteBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="right"
+                                android:padding="@dimen/margin5x"
+                                android:visibility="gone"
+                                app2:srcCompat="@drawable/cross" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginRight="@dimen/card_elevetion_4"
+                            android:layout_marginTop="@dimen/padding_heading"
+                            android:background="@drawable/red_button_background"
+                            android:paddingLeft="@dimen/margin_8"
+                            android:paddingRight="@dimen/padding_8"
+                            android:rotation="-360"
+                            android:text="@string/out_of_stock"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_small"
+                            android:textStyle="bold"
+                            android:visibility="@{data.stock ? View.GONE : View.VISIBLE}" />
+
+
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quantity"
+                            android:textAlignment="center"
+                            android:textColor="@color/light_gray"
+                            android:textSize="16.0sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/qtyLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/sub_qty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".33"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:onClick="@{(v)->handler.onClickSubtractQty(v,data)}"
+                                android:padding="@dimen/margin_8"
+                                android:scaleType="centerCrop"
+                                app2:srcCompat="@drawable/subtract_qty_icon" />
+
+                            <TextView
+                                android:id="@+id/qty"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_weight=".33"
+                                android:gravity="center_vertical"
+                                android:hint="1"
+                                android:padding="@dimen/card_elevetion_4"
+                                android:singleLine="true"
+                                android:text="@{data.quantity}"
+                                android:textAlignment="center"
+                                android:textColor="@color/v3_price_color"
+                                android:textSize="14.0sp" />
+
+                            <ImageView
+                                android:id="@+id/add_qty"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".3"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:onClick="@{(v)->handler.onClickAddQty(v,data)}"
+                                android:padding="@dimen/margin_8"
+                                android:scaleType="centerCrop"
+                                app2:srcCompat="@drawable/add_qty_icon" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_container"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray_color1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".9" />
+
+                    <TextView
+                        android:id="@+id/wishlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".58"
+                        android:drawablePadding="@dimen/padding"
+                        android:onClick="@{(v)->handler.onClickAddToWishlist(v,data)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/add_to_wishlist"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray_color1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".9" />
+
+                    <TextView
+                        android:id="@+id/delete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:drawablePadding="@dimen/padding"
+                        android:onClick="@{(v)->handler.onClickRemoveItem(v,data)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/remove"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

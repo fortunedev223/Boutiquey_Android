@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_elevetion_4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin5x">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:text="@string/order_id"
+                    android:textColor="#999999" />
+
+                <TextView
+                    android:id="@+id/order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    tools:text="123" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:orientation="vertical">
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/card_elevetion_2"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/card_elevetion_2"
+                    android:text="@string/view"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/margin_8" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:paddingTop="@dimen/margin5x"
+            android:text="@string/return_id"
+            android:textColor="#999999" />
+
+        <TextView
+            android:id="@+id/return_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_elevetion_2"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            tools:text="John Doe" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:paddingTop="@dimen/margin5x"
+            android:text="@string/name"
+            android:textColor="#999999" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_elevetion_2"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            tools:text="John Doe" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:paddingTop="@dimen/card_elevetion_2"
+            android:text="@string/status"
+            android:textColor="#999999" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_elevetion_2"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            tools:text="Pending" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:paddingTop="@dimen/card_elevetion_2"
+            android:text="@string/date_added"
+            android:textColor="#999999" />
+
+        <TextView
+            android:id="@+id/date_added"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/card_elevetion_2"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/card_elevetion_4"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            tools:text="31/05/2018" />
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

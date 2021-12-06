@@ -1,0 +1,658 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.CartHandler" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mostParenLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/svHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/empty_cart" />
+
+                <TextView
+                    android:id="@+id/errorTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_heading"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14.0sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/emptyCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/no_item_in_cart"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_gray"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/errorBStn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                android:layout_margin="@dimen/margin_8"
+                android:onClick="onClickContinueShopBtn"
+                android:padding="@dimen/button_padding"
+                android:text="@string/continue_shopping_btn"
+                android:textColor="@android:color/white"
+                android:textSize="14.0sp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/proceedToCheckout2"
+            android:layout_below="@+id/appbar"
+            android:scrollbars="none"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/scrollViewMainContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/outOfStockError"
+                    style="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/error_border"
+                    android:padding="10dp"
+                    android:textColor="@color/error_text_color"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/itemsOnTop"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="4"
+                        android:padding="5dp"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/totalAmountOnTop"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="6"
+                        android:gravity="right"
+                        android:padding="5dp"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="8dp"
+                    android:background="@color/light_gray_color1"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutMain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v4.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/cart_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </android.support.v4.widget.NestedScrollView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLaoyutAddMoreFromWishlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/myLinkColor"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/linearLaoyutAddMoreFromWishlistChild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/WishListImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="top"
+                            android:padding="0dp"
+                            android:src="@drawable/ic_wishlist" />
+
+                        <TextView
+                            android:id="@+id/WishListText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingLeft="10dp"
+                            android:text="ADD MORE FROM WISHLIST"
+                            android:textColor="?attr/myLinkColor"
+                            android:textSize="18.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <android.support.design.button.MaterialButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="@dimen/card_elevetion_2"
+                    android:onClick="@{(v)->handler.onClickUpdateCart()}"
+                    android:padding="@dimen/padding"
+                    android:text="@string/update_cart"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="@dimen/margin_8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/card_elevetion_4"
+                    android:layout_marginTop="@dimen/padding"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin5x">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/add_more_product" />
+
+                    <TextView
+                        android:id="@+id/continue_shopping"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:onClick="@{(v)->handler.onClickContinueShop(v)}"
+                        android:padding="@dimen/margin5x"
+                        android:text="@string/continue_shopping_btn"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/accent_color"
+                        android:textSize="@dimen/heading_size_small" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/empty_cart_svg" />
+
+                    <TextView
+                        android:id="@+id/empty_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:drawablePadding="@dimen/margin5x"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:onClick="@{(v)->handler.onClickEmptyCart(v)}"
+                        android:padding="@dimen/margin5x"
+                        android:text="@string/cart_empty"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/accent_color"
+                        android:textSize="@dimen/heading_size_small"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/EmptyCartTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:padding="@dimen/button_padding"
+                    android:text="@string/add_more_products"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:background="@drawable/add_to_cart_selector" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#FEF8C4"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/linearLaoyutDiscountTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding"
+                            android:text="@string/apply_coupon_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_min_large" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/enter_your_coupon_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/light_gray" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/padding">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/padding_6" />
+
+                            <View
+                                android:layout_width="@dimen/padding"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/padding"
+                                android:background="@drawable/add_to_cart_button"
+                                android:onClick="@{(v)->handler.onclickCouponCode(v)}"
+                                android:paddingBottom="@dimen/padding"
+                                android:paddingLeft="@dimen/padding_heading"
+                                android:paddingRight="@dimen/padding_heading"
+                                android:paddingTop="@dimen/padding"
+                                android:text="@string/apply"
+                                android:textColor="@color/accent_color"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/reward_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_elevetion_2"
+                    android:visibility="gone"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/rewardDiscountTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF8C4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding"
+                            android:text="@string/apply_your_reward_points"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_min_large" />
+
+                        <TextView
+                            android:id="@+id/reward_points_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding_6"
+                            android:text="@string/enter_your_coupon_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/light_gray" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/padding">
+
+                            <EditText
+                                android:id="@+id/reward_edittxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/padding_6" />
+
+                            <View
+                                android:layout_width="@dimen/padding"
+                                android:layout_height="match_parent" />
+
+                            <Button
+                                android:id="@+id/reward_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".7"
+                                android:padding="@dimen/padding"
+                                android:text="@string/apply" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/coupon_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_elevetion_2"
+                    android:visibility="gone"
+                    app:cardCornerRadius="0dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF8C4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding"
+                            android:text="@string/apply_coupon_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_min_large" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding_6"
+                            android:text="@string/enter_your_reward_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/light_gray" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/padding">
+
+                            <EditText
+                                android:id="@+id/coupon_edittxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/padding_6" />
+
+                            <View
+                                android:layout_width="@dimen/padding"
+                                android:layout_height="match_parent" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".7"
+                                android:onClick="@{(v)->handler.onclickCouponCode(v)}"
+                                android:padding="@dimen/padding"
+                                android:text="@string/apply" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/voucher_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_elevetion_2"
+                    android:visibility="gone"
+                    app:cardCornerRadius="0dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/linearLaoyutApplyVoucher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FEF8C4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding"
+                            android:text="@string/apply_voucher_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_min_large" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding_6"
+                            android:text="@string/enter_your_voucher_code"
+                            android:textAlignment="center"
+                            android:textColor="@color/light_gray" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/padding">
+
+                            <EditText
+                                android:id="@+id/voucher_edittxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:background="@drawable/border"
+                                android:padding="@dimen/padding_6" />
+
+                            <View
+                                android:layout_width="@dimen/padding"
+                                android:layout_height="match_parent" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".7"
+                                android:onClick="@{(v)->handler.onClickVoucherCode(v)}"
+                                android:padding="@dimen/padding"
+                                android:text="@string/apply" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="2dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/linearLaoyutCartTotals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                </android.support.v7.widget.CardView>
+
+                <!--For discount-->
+                <LinearLayout
+                    android:id="@+id/linearLaoyutDiscount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5.0dip"
+                        android:paddingStart="5.0dip">
+
+                        <EditText
+                            android:id="@+id/discoutCOdeET"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.0"
+                            android:singleLine="true" />
+
+                        <Button
+                            android:id="@+id/discountApplyBtn"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5.0dip"
+                            android:layout_weight="1.0"
+                            android:background="#ff0097A7"
+                            android:clickable="true"
+                            android:onClick="onClickDiscountApplyBtn"
+                            android:text="@string/apply"
+                            android:textColor="#ffffffff"
+                            android:textSize="14.0sp" />
+
+                        <Button
+                            android:id="@+id/discountCancelBtn"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5.0dip"
+                            android:layout_weight="1.0"
+                            android:background="#ff0097A7"
+                            android:clickable="true"
+                            android:onClick="onClickDiscountCancelBtn"
+                            android:text="@android:string/cancel"
+                            android:textColor="#ffffffff"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/proceedToCheckout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/margin_8"
+            android:clickable="true"
+            android:onClick="@{(v)->handler.onClickProceedToCheckout(v)}"
+            android:padding="@dimen/padding"
+            android:text="@string/proceed_to_checkout"
+            android:textColor="#ffff"
+            android:textSize="16.0sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:cornerRadius="0dp" />
+
+        <ProgressBar
+            android:id="@+id/main_progress_bar"
+            style="\?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+    </RelativeLayout>
+</layout>

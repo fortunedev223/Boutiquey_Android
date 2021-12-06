@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="webkul.opencart.mobikul"> <!-- please check version code -->
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+
+    <application
+        android:name=".analytics.MobikulApplication"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme1"
+        android:vmSafeMode="true"
+        tools:replace="android:name,android:theme,android:label, android:icon">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/map_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".FetchAddressIntentService"
+            android:exported="false" />
+        <service
+            android:name=".gcm.MyFcmListenerService"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PaymentWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ViewMoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+
+            <intent-filter>
+                <action android:name="com.opencart.mobikul" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oc.webkul.com"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="play.google.com"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AccountinfoActivity"
+            android:label="@string/title_activity_accountinfo"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".AddrBookActivity"
+            android:label="@string/title_activity_addr_book"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".MyorderActivity"
+            android:label="@string/title_activity_myorder"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".PointsAndTransactions"
+            android:label="@string/my_account"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".MyWishlistActivity"
+            android:label="@string/title_activity_my_wishlist"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".MyDownloadsActivity"
+            android:label="@string/title_activity_my_downloads"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".CreateAccountActivity"
+            android:label="@string/title_activity_create_account"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".Subcategory"
+            android:label="@string/title_activity_subcategory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".Cart"
+            android:label="@string/title_activity_Cart"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_Notification"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".otherActivty"
+            android:label="@string/title_activity_Other_Notification"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".ViewProductSimple"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".ViewMyOrderActivity"
+            android:label="@string/title_activity_view_my_order"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".NewAddressForm"
+            android:label="@string/add_new_address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".ViewPagerExampleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar" />
+        <activity
+            android:name=".OrderPlaceActivity"
+            android:label="@string/order_placed"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".CategoryActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+        </activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DashBoard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="webkul.opencart.mobikul.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".activity.MyOrders"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/facebook_app_id_protocol" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BrowerByBrands"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SubCategoryV3Theme"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProductDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OrderReturnView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ReturnInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ReturnOrderRequest"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".helper.NetworkSchedulerService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name=".deliveryboy.DeliveryBoy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Review_List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CMSPage"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".cartNotification.CartService" />
+
+        <receiver android:name=".cartNotification.CartBroadCast">
+            <intent-filter>
+                <action android:name="com.occart.broadcast" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

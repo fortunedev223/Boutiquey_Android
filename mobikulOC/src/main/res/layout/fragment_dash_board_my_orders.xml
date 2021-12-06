@@ -1,0 +1,32 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.DashBoardOrderAdapterModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
+        tools:context="webkul.opencart.mobikul.fragment.DashBoardMyOrders">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/error_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding"
+            android:text="@string/no_order_placed"
+            android:textAlignment="center"
+            android:textSize="@dimen/heading_size_medium" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myorder_recylcerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>

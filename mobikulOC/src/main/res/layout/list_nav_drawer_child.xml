@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingStart="@dimen/activity_vertical_margin">
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:paddingEnd="10dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="10dp"
+        android:paddingStart="0dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|start"
+        android:orientation="vertical"
+        android:paddingEnd="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:id="@+id/nav_drawer_child_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
+            android:lines="1"
+            android:maxLines="1"
+            android:textDirection="anyRtl"
+            android:textSize="@dimen/navigation_category_text_size"
+            tools:ignore="RtlSymmetry"
+            tools:targetApi="jelly_bean_mr1"
+            tools:text="Some drawer text" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,160 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_layout"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar" />
+            </android.support.design.widget.AppBarLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EEEEEE"
+                    android:fillViewport="true"
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/addrbookContainer"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/addNewAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/activity_vertical_margin"
+                                android:layout_marginRight="10dp"
+                                android:padding="@dimen/button_padding"
+                                android:text="@string/new_address"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#FFFFFF"
+                                android:visibility="gone" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin5x"
+                                android:paddingBottom="@dimen/padding"
+                                android:paddingLeft="@dimen/margin5x"
+                                android:paddingTop="@dimen/padding"
+                                android:text="@string/default_address"
+                                android:textSize="@dimen/heading_size_medium"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/addrbookdataContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/activity_vertical_margin"
+                                tools:context="com.webkul.mcom.AddrBookActivity">
+
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/address_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:id="@+id/addrbookitemslayout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/addrbookprogress"
+                            style="\?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+                <View
+                    android:id="@+id/shadow_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/toolbar_dropshadow" />
+
+                <TextView
+                    android:id="@+id/error_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_heading"
+                    android:text="@string/no_address_found"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:onClick="addNewAddress"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/add_address_book" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:padding="@dimen/margin5x"
+                android:text="@string/add_new_address"
+                android:textAlignment="viewStart"
+                android:textColor="@color/accent_color"
+                android:textSize="@dimen/heading_size_medium" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

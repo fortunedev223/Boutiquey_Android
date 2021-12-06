@@ -1,0 +1,84 @@
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.model.GetHomePage.Product" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.RecentSearchHandler" />
+    </data>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/main_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="@dimen/image_100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin5x"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/productImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_80dp"
+                        android:layout_gravity="center"
+                        android:onClick="@{(v)->handler.onClickViewedLatestProd(v,data)}"
+                        android:padding="@dimen/padding_heading" />
+
+                    <TextView
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:onClick="@{(v)->handler.onClickViewedLatestProd(v,data)}"
+                        android:minLines="2"
+                        android:padding="@dimen/padding"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="@{data.name}" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="invisible"
+                    android:onClick="@{(v)->handler.onClickAddToWishlist(v,data)}"
+                    tools:src="@drawable/wishlist_v3_unselected"
+                    android:src="@{data.wishlist_status? @drawable/wishlist_selected :@drawable/wishlist_v3_unselected}"/>
+
+                <TextView
+                    android:id="@+id/firstItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/continue1"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</layout>
+

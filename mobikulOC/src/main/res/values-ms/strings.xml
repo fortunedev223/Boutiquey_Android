@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- These strings are changed on performing any change in apllication -->
+    <!-- String used to perform some kind of functionality -->
+    <string name="new_version_available">Terdapat versi yang lebih baru lagi, klik UPDATE untuk naik taraf sekarang?</string>
+    <string name="want_to_proceed">Adakah anda mahu meneruskan?</string>
+    <string name="cancel">Batalkan</string>
+    <string name="search">Carian</string>
+    <!-- String shared by many packages -->
+    <string name="delete">Padam</string>
+    <string name="category_name">Kategori</string>
+    <string name="all_category">Semua Kategori</string>
+    <!-- String keywords used in application -->
+    <string name="view_all_product">Lihat Semua</string>
+    <string name="Success">Berjaya</string>
+    <string name="Error">Error</string>
+    <string name="of_toast_for_no_of_item">" of "</string>
+    <string name="home">Home</string>
+    <string name="drawer_open">Buka navigation drawer</string>
+    <string name="drawer_close">Tutup navigation drawer</string>
+    <string name="number_error">Masuk nombor yang sah</string>
+    <string name="ship_to">Dihantar kepada</string>
+    <string name="something_went_wrong">Error, Sila cuba lagi</string>
+    <string name="welcome">Welcome</string>
+    <string name="no_product_available">Tiada Produk Tersedia</string>
+    <!--         Google Getting the location address         -->
+    <string name="make_a_review">MAKE A REVIEW</string>
+    <string name="average_rating">Penilaian Purata</string>
+    <string name="sign_up"><u><b>SIGN-UP</b></u> </string>
+    <string name="app_name">Mendapatkan alamat lokasi</string>
+    <string name="fetch_address">Mendapatkan Lokasi Anda</string>
+    <string name="save">Simpan</string>
+    <string name="sub_category"> Sub-Kategori</string>
+    <string name="total_amount_wallet">Baki Anda</string>
+    <string name="add_money">Tambah Wang Ke Baki</string>
+    <string name="enter_amount">Tambah jumlah</string>
+    <string name="enter_code">Masukkan kod</string>
+    <string name="my_wallet">Baki Saya</string>
+    <string name="credit_history">Sejarah Kredit</string>
+    <string name="debit_history"> Sejarah Debit</string>
+    <!--         Google Getting the location address         -->
+    <string name="order_Id">ID Pesanan</string>
+    <string name="no_order_found">Tiada Pesanan Dijumpai</string>
+    <string name="checkout_terms_condition"> Saya telah membaca dan bersetuju dengan Terma dan Syarat</string>
+    <string name="terms_condition_clickable">Terma dan Syarat</string>
+    <string name="view_product_further">Lihat Produk</string>
+    <string name="wallet_remain_amt_msg">Pilih Kaedah Pembayaran Untuk Baki Jumlah</string>
+    <string name="amount_credit">Jumlah</string>
+    <string name="transaction">Transaksi</string>
+    <string name="credit_date">Tarikh</string>
+    <string name="credit_description">Penerangan</string>
+    <string name="address_found">Alamat dijumpai</string>
+
+    <string name="no_address_found"> Maaf, tiada alamat dijumpai</string>
+    <string name="no_location_data_provided">Tiada data lokasi yang disediakan</string>
+    <string name="service_not_available">Maaf, perkhidmatan ini tidak sedia sekarang</string>
+    <string name="invalid_lat_long_used">Lintang atau bujur yang digunakan tidak sah </string>
+    <string name="dummy_content">Kandungan dummy</string>
+    <string name="enter_valid_quantity">Kuantiti yang dimasukan tidak sah untuk sekarang</string>
+    <string name="warning_enter_review_text">Teks yang dimasukkan mesti lebih daripada 25 Huruf</string>
+
+    <!-- Response/Error text string to user -->
+    <string name="new_password_length_check">Kata laluan baru mesti mempunyai sekurang-kurangnya 6 Huruf</string>
+    <string name="is_require_text">adalah diperlukan!</string>
+    <string name="email_is_required">Alamat E-mel diperlukan</string>
+    <string name="enter_valid_email">Sila Masukkan E-mel Yang Sah!</string>
+    <string name="please_wait"> sila tunggu</string>
+    <string name="processing_request_response">sementara kami memproses permintaan anda</string>
+    <string name="intenet_unavailable">Internet tidak berfungsi,sila memeriksa sambungan internet anda dan cuba lagi</string>
+    <string name="fill_email_address"> Masukkan alamat e-mel</string>
+    <!-- Strings related to layered Navigation pages Activity -->
+    <!-- Strings related to Checkout pages Activity -->
+    <string name="paypal_custom"> Ini adalah teks yang akan dikaitkan dengan pembayaran yang boleh digunakan oleh aplikasinya.</string>
+    <string name="paypal_msg1">Future Payment code received from PayPal</string>
+    <string name="paypal_msg2">Profile Sharing code received from PayPal</string>
+    <string name="new_address">Alamat Baru</string>
+    <string name="loading">Loading...</string>
+    <string name="alert_sipping_method">Sila pilih kaedah penghantaran</string>
+    <string name="msg_sipping_method">Maaf, tiada sebut harga tersedia untuk pesanan ini pada masa ini.</string>
+    <string name="continue1">CONTINUE</string>
+    <string name="number">Nombor</string>
+    <string name="verify">Sahkan Nombor Anda</string>
+    <string name="alert_no_shipping_method_available"> Pesanan anda tidak dapat diproses pada masa ini kerana tiada kaedah penghantaran tersedia untuknya. Sila buat perubahan yang diperlukan dalam alamat penghantaran anda.</string>
+    <string name="order_placed">Pesanan anda telah berjaya</string>
+    <string name="wait_for_a_moment">Sila Tunggu sebentar</string>
+    <string name="validation_error">Error Pengesahan</string>
+    <string name="fname_is_required">Nama Anda diperlukan!</string>
+    <string name="lname_is_required">Nama Ayah diperlukan!</string>
+    <string name="telephone_is_required"> Nombor telefon diperlukan!</string>
+    <string name="street_address_is_required">Alamat diperlukan!</string>
+    <string name="city_address_is_required"> bandar diperlukan!</string>
+    <string name="zip_is_required">Poskod diperlukan!</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="checkout_as">CHECKOUT AS</string>
+    <string name="billing_information">MAKLUMAT BIL</string>
+    <string name="select_billing_address_enter_new_one"> Pilih alamat Bil dari buku alamat anda atau masukkan alamat baru.</string>
+    <string name="select_shipping_address_enter_new_one">Pilih alamat penghantaran dari buku alamat anda atau masukkan alamat baru.</string>
+    <string name="shippng_info">MAKLUMAT PENGHANTARAN</string>
+    <string name="use_billing_add">Gunakan Alamat Bil</string>
+    <string name="shipping_method"> CARA PENGHANTARAN</string>
+    <string name="payment_info"> MAKLUMAT PEMBAYARAN</string>
+    <string name="order_review">PENGESAHAN PESANAN</string>
+    <string name="billing_address">ALAMAT BIL</string>
+    <string name="shipping_address">ALAMAT PENGHANTARAN</string>
+    <string name="shipping_to_this_address"> Hantar kan ke alamat ini</string>
+    <string name="paymentMethods">Cara Pembayaran</string>
+    <string name="product">PRODUK</string>
+    <string name="subtotal">SUB-JUMLAH:</string>
+    <string name="subtotal_cart">Sub-Jumlah</string>
+    <string name="pay_with_paypal">Pay with PayPal</string>
+    <string name="pay_with_paytm">Pay with Paytm</string>
+    <string name="place_order">SAHKAN PESANAN</string>
+    <string name="unit_price">Harga seunit</string>
+    <!-- Strings related to category pages Activity -->
+    <string name="items_found">Produk dijumpai</string>
+    <string name="no_order_placed"> Anda tidak meletakkan sebarang pesanan lagi</string>
+
+    <!-- Strings related to Cart Activity -->
+    <string name="by">oleh</string>
+    <string name="empty_cart_btn">Kosongkan Troli</string>
+    <string name="price_label">HARGA:</string>
+    <string name="subtotal_label">SUB-JUMLAH:</string>
+    <string name="no_item_in_cart"> Anda tidak mempunyai item di troli anda.</string>
+    <string name="empty_cart">Troli anda kosong</string>
+    <string name="cart_empty">Kosongkan Troli</string>
+    <string name="ques_move_to_wishlist"> Adakah anda pasti, anda mahu memindahkan item ke senarai anda?</string>
+    <string name="apply_coupon_response">semasa kami proseskan kupon anda</string>
+    <string name="are_you_sure">Adakah anda pasti?</string>
+    <string name="are_you_sure_remove_from_cart"> Adakah anda pasti untuk mengeluarkan item ini dari troli anda?</string>
+    <string name="option_required">Pilihan Diperlukan</string>
+    <string name="select_option">Pilih Pilihan</string>
+    <string name="continue_shopping_btn">Teruskan Pembelian</string>
+    <string name="proceed_to_checkout">PROSES UNTUK CHECKOUT</string>
+    <string name="update_cart">UPDATE TROLI</string>
+    <string name="apply">Apply</string>
+    <string name="qty">Kuantiti</string>
+    <string name="qty2">QTY:</string>
+    <string name="view_all">Lihat Semua</string>
+    <!-- Strings related to AdvanceSearch Result Grid Activity -->
+    <string name="select_shipping_address">Pilih alamat penghantaran</string>
+    <string name="select_shipping_method">Pilih Kaedah Penghantaran</string>
+
+    <!-- Strings related to AdvanceSearch Activity -->
+
+    <string name="select_one_search_term"> Sila nyatakan sekurang-kurangnya satu istilah carian.</string>
+    <string name="price_from">harga dari</string>
+    <string name="price_to">sampai harga</string>
+    <string name="date_from">tarikh dari</string>
+    <string name="date_to">sampai tarikh</string>
+    <string name="reset_date">Tetapkan semula tarikh</string>
+    <!-- Strings related to Addressbook Activity -->
+    <string name="addrbook_action_title">Buku alamat</string>
+    <string name="title_activity_addr_book">Buku alamat</string>
+    <string name="del_your_address">Padamkan alamat anda</string>
+    <string name="del_your_address_alert">Adakah anda mahu memadamkan Alamat ini</string>
+    <string name="add_new_add">tambah alamat baru</string>
+
+    <!-- Strings related to AccountInfo Activity -->
+    <string name="accountinfo_action_title">Maklumat Akaun</string>
+    <string name="accinfofirstnameTitle">Nama Anda</string>
+    <string name="accinfolastnameTitle">Nama Ayah</string>
+    <string name="accinfoemailTitle">Alamat emel</string>
+    <string name="title_activity_accountinfo">Maklumat Akaun</string>
+    <string name="new_password">Kata Laluan Baru</string>
+    <string name="confirm_password">Sahkan Kata Laluan</string>
+    <string name="password_shud_match">Kata laluan mesti sepadan!</string>
+
+    <!-- String related to menu titles -->
+    <string name="logout_title">Log Keluar</string>
+    <string name="login_title">Log Masuk</string>
+    <string name="desciption">Penerangan</string>
+    <string name="no_description"> Tiada Penerangan disediakan</string>
+    <!-- Strings related to Mobikul Home Page -->
+    <string name="featured_product_label">FEATURED PRODUCT</string>
+    <string name="latest_product_label">LATEST PRODUCT</string>
+    <string name="whats_new">What\'s New</string>
+    <string name="newsletter_label">SURAT BERITA</string>
+    <string name="subscribe_button_label">LANGGAN</string>
+    <string name="subscribe_edittext_hint">Alamat emel</string>
+    <string name="press_back_to_exit">Press Back again to Exit</string>
+
+    <!-- String Related to navigation drawer -->
+    <string name="nav_adv_search_label">carian terperinci</string>
+
+    <!-- Strings related to Mobikul Home Page -->
+
+    <string name="search_hint">Carian Produk</string>
+
+    <!-- Strings related to Login Activity -->
+    <string name="title_activity_login">LOG MASUK</string>
+    <string name="loginFormEmailTitle">Alamat emel</string>
+    <string name="loginFormPasswordTitle">Kata Laluan</string>
+    <string name="loginFormLoginButton">Log Masuk</string>
+    <string name="alert_password_length">mesti mempunyai sekurang-kurangnya 4 huruf</string>
+    <string name="password_alert_password_length"> Kata laluan mesti mempunyai sekurang-kurangnya 4 huruf</string>
+    <string name="submit">Hantar</string>
+    <string name="message">Mesej</string>
+
+    <!-- Strings related to CreateAccount Activity -->
+    <string name="title_activity_create_account">Daftar akaun</string>
+    <string name="signup_action_title">Mendaftar dengan alamat emel</string>
+    <string name="signupFormHeading">Mendaftar akaun</string>
+    <string name="signupFormFirstNameTitle">Nama Anda</string>
+    <string name="signupFormLastNameTitle">Nama Ayah</string>
+    <string name="signupFormPasswordTitle">Kata Laluan</string>
+    <string name="signupFormConfPasswordTitle">Sahkan Kata Laluan</string>
+    <string name="signupFormRegisterTitle">Daftar</string>
+    <string name="placed_on">Placed On</string>
+    <string name="total_products">Jumlah Produk</string>
+    <string name="details">Butiran</string>
+
+    <!-- Strings related to Dashboard Activity -->
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="dashboard_action_title">My Dashboard</string>
+    <string name="newslettersheading">Surat Berita</string>
+    <string name="editaction2">edit</string>
+    <string name="order_id">ID Pesanan</string>
+    <string name="date">Tarikh</string>
+    <string name="status">Status</string>
+    <string name="name">Nama</string>
+    <string name="there_are_no_search_terms_available_">Tiada istilah carian yang tersedia.</string>
+
+    <!-- Strings related to My Orders Activity -->
+    <string name="myorder_action_title">My Orders</string>
+    <string name="title_activity_myorder">My Orders</string>
+
+    <!-- Strings related to My Product Review Activity -->
+    <string name="myproreview_action_title">My Product Reviews</string>
+
+    <!-- Strings related to My Wishlist Activity -->
+    <string name="mywishlist_action_title">My Wishlist</string>
+    <string name="title_activity_my_wishlist">My Wishlist</string>
+    <string name="mywishlistheading">MY WISHLIST</string>
+
+    <!-- Strings related to Newsletter Subscription Activity -->
+    <string name="newslettersubs_action_title">Langganan Surat Berita</string>
+    <string name="title_activity_news_letter_subs">Langganan Surat Berita</string>
+    <string name="newsletterheading">Langganan Surat Berita</string>
+
+    <!-- Strings related to Category Activity -->
+    <string name="title_activity_sorter">Sorter</string>
+    <string name="switcher">view switcher</string>
+    <string name="title_activity_subcategory">Subkategori</string>
+    <string name="sort">Disusun mengikut</string>
+    <string name="filter">Filter</string>
+    <string name="clear">Clear</string>
+    <string name="done">Done</string>
+
+    <!-- Strings related to My Downloadable Products Activity -->
+
+    <string name="mydownloads_action_title">My Downloadable Products</string>
+    <string name="title_activity_my_downloads">My Downloadable Products</string>
+    <string name="order_no">Pesanan #</string>
+    <string name="download_started">Download Started</string>
+    <string name="image">image</string>
+    <string name="Search">Carian</string>
+    <string name="title_activity_advancedsearch">Carian Terperinci</string>
+    <string name="title_activity_review">Reviews</string>
+    <string name="action_cart">Troli</string>
+    <string name="action_bell">Bell</string>
+    <string name="title_activity_Cart">Troli</string>
+    <string name="title_activity_Notification">Notifikasi</string>
+    <string name="title_activity_Other_Notification">lain Notifikasi</string>
+    <string name="title_activity_search_terms">Terma Carian</string>
+    <string name="title_activity_view_my_order"> Lihat Pesanan Saya</string>
+    <string name="title_activity_review_details">Butiran Review</string>
+
+    <!-- Strings related to my wishlist activity -->
+    <string name="updating_wishlist">sementara senarai wishlist anda sedang dikemas kini</string>
+    <string name="add_to_wishlist_ques"> Adakah anda pasti mahu mengeluarkan produk ini dari senarai wishlist anda?</string>
+    <string name="price">Harga</string>
+
+    <!-- Strings related to notification activity -->
+    <string name="notification">NOTIFIKASI</string>
+    <string name="notification_menu_title">Notifikasi</string>
+    <string name="new_keyword">Baru</string>
+
+    <!-- Strings related to my product review activity -->
+    <string name="product_name">Nama Produk</string>
+    <string name="view_details">Lihat Butiran</string>
+
+    <!-- AUTO GENERATED/OTHER STRINGS -->
+    <string name="company">Syarikat</string>
+    <string name="telephone">No.Telefon</string>
+    <string name="fax">Fax</string>
+    <string name="address">Alamat</string>
+    <string name="street_address">Alamat</string>
+    <string name="street_address_2">Alamat</string>
+    <string name="city">Bandar</string>
+    <string name="state">Negeri</string>
+    <string name="zip">Poskod</string>
+    <string name="country">Negara</string>
+    <string name="save_address">"Simpan ALAMAT"</string>
+
+    <!-- order_placed_activity.xml -->
+    <string name="thank_you_for_your_purchase_">TERIMA KASIH ATAS PEMBELIAN ANDA!</string>
+    <string name="your_order_is_">"Pesanan anda ialah:"</string>
+    <string name="you_will_receive_an_order_confirmation_email_with_details_of_your_order_and_a_link_to_track_its_progress_">Anda akan menerima e-mel pengesahan pesanan dengan butiran pesanan anda.</string>
+
+    <!-- other_activity.xml -->
+    <string name="other_notification">Lain Notifikasi</string>
+
+    <!-- ProductDescExpListAdapter.java -->
+    <string name="total">Jumlah</string>
+    <string name="_customer_reviews">" Customer Reviews"</string>
+    <string name="be_the_first_to_review_this_product">Be the first to review this product</string>
+
+    <!-- String related to product list and grid adapter -->
+
+    <string name="you_are_not_logged_in_please_login_to_continue"> Anda tidak log masuk. Sila log masuk untuk meneruskan</string>
+
+    <!-- ReviewActivity.java Search Result grid and list activities -->
+    <string name="price_">"HARGA: "</string>
+    <string name="please_select_one_of_each_of_the_ratings"> Sila pilih satu daripada setiap penilaian</string>
+    <string name="review_details">BUTIRAN REVIEW</string>
+    <string name="your_rating">PENILAIAN ANDA</string>
+    <string name="average_customer_rating_">AVERAGE CUSTOMER RATING:</string>
+    <string name="how_do_you_rate_this_product"> Bagaimana anda menilaikan produk ini</string>
+    <string name="summary_of_your_review">Ringkasan Penilaian Anda</string>
+    <string name="submit_review">Hantar Penilaian Anda</string>
+    <string name="select_payment_method">Pilih Kaedah Pembayaran</string>
+    <string name="view_terms_conditions">Lihat terma dan syarat</string>
+    <!-- search_terms.xml -->
+    <string name="do_you_want_add_fingerprint"> Adakah anda mahu menambah FingerPrint?</string>
+    <string name="popular_search_terms">SYARAT-SYARAT PENCARIAN POPULAR</string>
+
+    <!-- Sorter.java -->
+    <string name="sort_by"> Susun Mengikut</string>
+
+    <!-- SubCategoty Page -->
+
+    <string name="view_all_">Lihat Semua</string>
+    <string name="shipping_address_">ALAMAT PENGHANTARAN</string>
+    <string name="shipping_method_">CARA PENGHANTARAN</string>
+    <string name="billing_address_">ALAMAT BIL</string>
+    <string name="payment_method_">KAEDAH PEMBAYARAN</string>
+
+    <!-- ViewMyOrderActivity.java -->
+    <string name="invoices">Invois</string>
+    <string name="refunds">Refunds</string>
+    <string name="shipments">Penghantaran</string>
+
+    <!-- ViewProductBundle.java -->
+    <string name="_reviews_s_">" Reviews(s)"</string>
+    <string name="none">none</string>
+    <string name="maximum_number_of_characters_">"Maximum number of characters: "</string>
+    <string name="allowed_file_extensions_to_upload_">"Allowed file extensions to upload:  "</string>
+    <string name="date_">Tarikh :</string>
+    <string name="reset">Tetap semula</string>
+    <string name="select_time">Pilih masa</string>
+    <string name="are_you_sure_you_want_to_add_item_to_wish_list_">Adakah anda pasti, anda mahu menambah item ke senarai wishlist anda ?</string>
+    <string name="field_">"Field "</string>
+    <string name="_is_not_complete_"> "tidak lengkap."</string>
+    <string name="browse_">Browse..</string>
+    <string name="no_file_selected"> Pilih fail anda</string>
+    <string name="price2_">harga:</string>
+    <string name="qty4_">Qty:</string>
+    <string name="add_to_cart">Tambah ke Troli</string>
+    <string name="category_">KATEGORI</string>
+
+    <string name="buy_now">Beli Sekarang</string>
+    <string name="time_">Masa:</string>
+    <string name="_please_select_">--- Sila Pilih ---</string>
+    <string name="product_added_to_wishlist">Produk telah ditambah ke senarai wishlist</string>
+    <string name="product_info">Maklumat Produk</string>
+    <string name="download_started1">download started...</string>
+    <string name="your_product_is_successfully_added_to_your_wishlist">Produk telah berjaya ditambah ke senarai wishlist anda</string>
+    <string name="your_name">Nama Anda</string>
+    <string name="password_">"Kata Laluan "</string>
+    <string name="forgot_your_password_">Lupa Kata Laluan?</string>
+    <string name="select_color">Pilih Warna</string>
+    <string name="choose_size">Pilih Saiz</string>
+    <!-- other string used in layouts, menus XML's -->
+    <string name="checkbox">CheckBox</string>
+    <string name="_required_fields">* Ruangan wajib</string>
+    <string name="quantity">Kuantiti</string>
+    <string name="select_quantity">Pilih Kuantiti</string>
+    <string name="price2">Harga:</string>
+    <string name="sku2">sku</string>
+    <string name="product_name2">Nama Produk</string>
+    <string name="add_to_wishlist">Tambah ke senarai wishlist</string>
+    <string name="edit_change_address"> Edit / Ubah Alamat</string>
+    <string name="add_your_review"> Tambah ulasan anda</string>
+    <string name="contact_us">Hubungi Kami</string>
+    <string name="filemodifydate">filemodifydate</string>
+    <string name="filename">filename</string>
+    <string name="filesize">filesize</string>
+    <string name="remind_later"> Ingatkan kemudian</string>
+    <string name="please_enter_your_email_address_below_you_will_receive_a_link_to_reset_your_password_"> Sila masukkan alamat e-mel anda di bawah. Anda akan menerima link untuk menetapkan semula kata laluan anda.</string>
+    <string name="filter_your_order_apos_s">Filter your order\'s</string>
+    <string name="no_order_available_"> "Tiada Pesanan didapati"</string>
+    <string name="order_status">Status Pesanan</string>
+    <string name="seller_dashboard">Seller Dashboard</string>
+    <string name="seller_order">Seller Order</string>
+    <string name="reset_time">Reset Time</string>
+    <string name="login_action_title">Log Masuk</string>
+    <string name="filter_by">Filter By</string>
+
+    <!-- ++++++++++++++++++++++++++++++ openCart +++++++++++++++++++++++++++++++++ -->
+
+    <string name="account_action_title">Akaun</string>
+    <string name="my_account">Akaun Saya</string>
+    <string name="_edit_your_account_information"> Edit maklumat akaun anda "</string>
+    <string name="change_your_password">Tukar kata laluan anda</string>
+    <string name="modify_your_address_book_entries">Edit/Ubah Buku Alamat anda</string>
+    <string name="modify_your_wish_list">Edit/Ubah Senarai wishlist</string>
+    <string name="view_your_order_history"> Lihat sejarah pesanan anda</string>
+    <string name="my_orders">Pesanan Anda</string>
+    <string name="downloads">Downloads</string>
+    <string name="your_reward_points">Mata Ganjaran Anda</string>
+    <string name="view_your_return_requests">Lihat permintaan pemulangan anda</string>
+    <string name="your_transactions">Transaksi Anda</string>
+    <string name="continue2">Continue</string>
+    <string name="subscribe_unsubscribe_to_newsletter">Langgan / berhenti melanggan surat berita</string>
+    <string name="edit">Edit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="manufacturer">Manufacturer: %s</string>
+    <string name="default_address">Alamat Default</string>
+    <string name="select_your_address">Pilih Alamat Anda</string>
+    <string name="warning_you_can_not_delete_your_default_address_"> Amaran: Anda tidak boleh memadamkan alamat default anda!</string>
+    <string name="customer">Customer</string>
+    <string name="no_of_products">Bilangan Produk</string>
+    <string name="order_information">Maklumat Pesanan</string>
+    <string name="date_added">Tarikh ditambah</string>
+    <string name="comment">Komen</string>
+    <string name="order_details">Maklumat-maklumat Pesanan</string>
+    <string name="description">PENERANGAN</string>
+    <string name="points">Points</string>
+    <string name="amount_usd_">Jumlah</string>
+    <string name="title_activity_return_data">ReturnData</string>
+    <string name="title_activity_view_my_return">ViewMyReturnActivity</string>
+    <string name="return_information">Maklumat Pemulangan</string>
+    <string name="return_details">Butiran Pemulangan</string>
+    <string name="reason">Sebab</string>
+    <string name="opened">Dibuka</string>
+    <string name="action">Tindakan</string>
+    <string name="return_comments">Komen Pemulangan</string>
+    <string name="product_information_reason_for_return">Maklumat Produk &amp; Alasan Pulangan</string>
+    <string name="return_id_">ID Pemulangan</string>
+    <string name="date_added_">Tarikh ditambah</string>
+    <string name="order_date">Tarikh Pesanan</string>
+    <string name="order_id_b">ID Pesanan:</string>
+    <string name="stock">Stock</string>
+    <string name="your_personal_details">Butiran Peribadi Anda</string>
+    <string name="your_address">Alamat anda</string>
+    <string name="your_password">Kata laluan anda</string>
+    <string name="newsletter">Surat Berita</string>
+    <string name="checkout_guest">Alamat penghantaran dan alamat bil saya adalah sama.</string>
+    <string name="address_1">Alamat</string>
+    <string name="address_2">Alamat</string>
+    <string name="i_have_read_and_agree_to_the_privacy_policy_">"Saya telah membaca dan bersetuju dengan Polisi Privasi"</string>
+    <string name="i_have_read_and_agree_to_the_terms_conditions_">"Saya telah membaca dan bersetuju dengan Terma dan Syarat"</string>
+    <string name="warning_terms_condition">Amaran: Anda mesti bersetuju dengan Terma &amp; Syarat!</string>
+    <string name="warning">Amaran</string>
+    <string name="customer_group">Customer Group</string>
+    <string name="size">saiz</string>
+    <string name="category">KATEGORI</string>
+    <string name="shop_for">SHOP FOR</string>
+    <string name="brand_">"Jenama:"</string>
+    <string name="product_code_">"Kod Produk: "</string>
+    <string name="reward_points_">"Mata ganjaran: "</string>
+    <string name="availability_">"Availability: "</string>
+    <string name="ex_tax_">"Ex Tax: "</string>
+    <string name="tax">Tax: %s</string>
+    <string name="reward">Ganjaran: %s</string>
+    <string name="model">Model:</string>
+    <string name="price_in_reward_points_"> "Harga dalam mata ganjaran: "</string>
+    <string name="language">Bahasa</string>
+    <string name="write_a_review">Tambah Ulasan Anda</string>
+    <string name="show_review">Reviews |</string>
+    <string name="title_activity_seller_profile">SellerProfile</string>
+    <string name="profile">Profile</string>
+
+    <string name="your_review">Review Anda</string>
+    <string name="review_text_must_be_between_25_and_1000_characters_">Review Text must be between 25 and 1000 characters!</string>
+    <string name="review_name_must_be_between_3_and_25_characters_">Review Name must be between 3 and 25 characters!</string>
+    <string name="rating">Penilaian</string>
+    <string name="please_specify_payment_method">Sila nyatakan kaedah pembayaran</string>
+    <string name="confirm_order">Sahkan Pesanan</string>
+    <string name="order_cancel">Pesanan anda telah dibatalkan</string>
+    <string name="confirm_order_">SAHKAN PESANAN</string>
+    <string name="your_order_has_been_placed_">Pesanan anda telah berjaya!</string>
+    <string name="there_have_not_any_notification_yet_">Belum ada pemberitahuan lagi.</string>
+    <string name="i_want_to_use_an_existing_address"> Saya mahu menggunakan alamat yang ada</string>
+    <string name="i_want_to_use_a_new_address">Saya mahu menggunakan alamat baru</string>
+    <string name="edit_account">Edit Akaun</string>
+    <string name="filter_options_are_not_available">Filter options are not available</string>
+    <string name="options_required">Pilihan Diperlukan</string>
+    <!--<string name="demo_username">demo@webkul.com</string>-->
+    <!--<string name="demo_password">demo</string>-->
+    <string name="cart">Troli</string>
+    <string name="default1">Default</string>
+    <string name="special">Special</string>
+    <string name="my_delivery_and_billing_addresses_are_the_same_">Alamat penghantaran dan alamat bil saya adalah sama.</string>
+    <string name="wishlist_msg">Anda mesti Log masuk atau daftar akaun untuk menyimpan produk ini ke senarai idaman anda</string>
+    <string name="guest_wishlist_msg">Anda mesti Log masuk atau daftar akaun untuk lihat produk idaman anda.</string>
+    <string name="myaddress">Alamat Anda</string>
+    <string name="myorders">Pesanan Anda</string>
+    <string name="myreviews">Review Anda</string>
+
+    <!-- ++++++++++++++++++++++++++++++ openCart MP +++++++++++++++++++++++++++++++++ -->
+
+    <string name="sell">Jual</string>
+    <string name="text_cmt_to_admin">You can add Comments to this order and can send that to Customer / Admin.</string>
+    <string name="add_history">Add History</string>
+    <string name="cant_change_status">You can not set this status!</string>
+    <string name="items">Items</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="product_returns">Product Returns</string>
+    <string name="no_product_found">No Product Found</string>
+    <string name="browse_by_brands">Browse By Brands</string>
+    <string name="login_or_register">Login Or Register</string>
+    <string name="currency">Currency</string>
+    <string name="retry">Retry</string>
+    <string name="login_text">Sign In Your Account To Start</string>
+    <string name="continue_with">or Continue with</string>
+    <string name="sign_up_text">Get A Fresh Start With Us</string>
+    <string name="logout_msg">You have successfully logged out.</string>
+    <string name="sale">Sale</string>
+    <string name="all">"All "</string>
+    <string name="applied_rewards">"APPLIED REWARDS: "</string>
+    <string name="agree_policy">You must agree to the Privacy Policy!</string>
+    <string name="policy">Policies</string>
+    <string name="update">UPDATE</string>
+    <string name="about_shop">About Shop</string>
+    <string name="about">About</string>
+    <string name="facebook">FACEBOOK</string>
+    <string name="google">GOOGLE+</string>
+    <string name="sign_in_with_facebook">Sign in with facebook</string>
+    <string name="sign_in_with_google">Sign in with google</string>
+    <string name="or_continue_with">Or Continue With</string>
+    <string name="add_more_products">Add More Products</string>
+    <string name="apply_coupon_code">APPLY COUPON CODE</string>
+    <string name="enter_your_coupon_code">Enter your coupon code if you have one</string>
+    <string name="enter_your_voucher_code">Enter your voucher code if you have one</string>
+    <string name="apply_voucher_code">APPLY VOUCHER CODE</string>
+    <string name="apply_your_reward_points">APPLY YOUR REWARD POINTS</string>
+    <string name="total_amount">"Total Amount : "</string>
+    <string name="reward_error">" Warning: Please enter the amount of reward points to use!"</string>
+    <string name="features">"FEATURES"</string>
+    <string name="reviews">"REVIEWS"</string>
+    <string name="review_your_order">REVIEW YOUR ORDER</string>
+    <string name="previous">PREVIOUS</string>
+    <string name="next">NEXT</string>
+    <string name="upload_url">http://sarangagrawal.com/d5/oc2.3/index.php?route=tool/upload</string>
+    <string name="file_selector">file selector</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvc">CVC</string>
+    <string name="click_here_for_the_demo_details">Click here for the Demo Details</string>
+    <string name="out_of_stock">Out Of Stock</string>
+    <string name="marketplace">Marketplace</string>
+    <string name="ask_question_to_admin">Ask Question to Admin</string>
+    <string name="action_settings">settings</string>
+    <string name="ebs_hostname">EBS</string>
+    <string name="pay_with_ebs">Pay with EBS</string>
+    <string name="sigin_error">Error Signing in !!!</string>
+    <string name="auth_succeeded">Authentication Successful</string>
+    <string name="auth_Denied">Authentication Denied</string>
+    <string name="email">Email</string>
+    <string name="use_email_address">USE EMAIL ADDRESS</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="password">Password</string>
+    <string name="login">Login with email</string>
+    <string name="forget_password">Forget Password ... ?</string>
+    <string name="register">Register</string>
+    <string name="continue_as_a_guest">Continue As A Guest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_product_details">Butiran Produk</string>
+
+
+</resources>

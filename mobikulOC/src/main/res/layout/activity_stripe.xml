@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp" >
+
+    <LinearLayout
+        android:id="@+id/stripeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Spinner
+            android:id="@+id/cardType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nextFocusForward="@+id/cardNumber" />
+
+        <EditText
+            android:id="@+id/cardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/card_number"
+            android:inputType="number"
+            android:nextFocusForward="@+id/expMonth"
+            android:singleLine="true"
+            android:text="4242424242424242" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/expMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/month_array"
+                android:nextFocusForward="@+id/expYear" />
+
+            <Spinner
+                android:id="@+id/expYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/year_array"
+                android:nextFocusForward="@+id/cvc" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/cvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/cvc"
+            android:maxLength="4"
+            android:text="123" />
+
+        <TextView
+            android:id="@+id/hintAboutStripe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="end"
+            android:onClick="stripeUrl"
+            android:padding="5dp"
+            android:text="@string/click_here_for_the_demo_details"
+            android:textColor="#2E8AB8"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

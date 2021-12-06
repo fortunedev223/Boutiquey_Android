@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lblListHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_6"
+    android:textColor="@color/secondary_text_color"
+    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <!--android:drawableEnd="@drawable/down_green_arrow"-->

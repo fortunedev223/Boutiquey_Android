@@ -1,0 +1,87 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/mostParenLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/appbar"
+            android:background="#EEEEEE"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/myReturnContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.webkul.mcom.MyorderActivity">
+
+                <TextView
+                    android:id="@+id/myReturnheading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@color/primary_color"
+                    android:padding="5dp"
+                    android:text="@string/product_returns"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/heading_size_large"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/myReturnContainerList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/myReturnheading"
+                    tools:context="com.webkul.mcom.MyorderActivity">
+
+                    <ProgressBar
+                        android:id="@+id/myReturnRequestBar"
+                        style="\?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="#FFFFFF"
+                        android:visibility="gone" />
+
+                    <ListView
+                        android:id="@+id/myReturnList"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/myReturnRequestBar"
+                        android:divider="@null"
+                        android:orientation="vertical"
+                        android:padding="4dp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/myprogress"
+                style="\?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

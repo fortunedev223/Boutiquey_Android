@@ -1,0 +1,67 @@
+//--------------------Configuration Guide OpenCart MarketPlace & Appbuilder---------------------------//
+
+1) Enter Your Base Url,Api key,Application_Id & Api Password
+
+   PackageName: webkul.opencart.mobikul.Helper
+   Class: Constants
+   Fields: BASE_URL,API_USERNAME & API_PASSWORD,Application_ID
+
+2) Integrate Push Notification add Client google-service.json
+   
+   For MarketPlace:   
+   Go to: Project level>>Expand marketplace-oc>>Expand mobikul>>update google-service.json
+   
+   For Appbuilder:
+   Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>update google-service.json
+
+3) Change Color code
+
+   For MarketPlace:   
+   Go to: Project level>>Expand marketplace-oc>>Expand mobikul>>Expand values>>Select colors.xml change (primary_color,dark_primary_color,accent_color)
+   
+   For Appbuilder:
+   Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>Expand values>>Select colors.xml change (primary_color,dark_primary_color,accent_color)
+
+4) Change Application Title
+
+   For MarketPlace:   
+   Go to: Project level>>Expand marketplace-oc>>Expand mobikul>>Expand values>>Select string.xml update app_name index
+   
+   For Appbuilder:
+   Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>Expand values>>Select string.xml update app_name index
+
+5) Change Launcher icon
+
+ For MarketPlace:   
+   Go to: Project level>>Expand marketplace-oc>>Expand main>>Expand res>>Select mipmap folder update ic_launcher
+   
+   For Appbuilder:
+   Go to: Project level>>Expand mobikul-oc>>Expand main>>Expand res>>Select drawable folder update ic_launcher
+
+6) Change Splash Screen & Placeholder
+
+ For MarketPlace:   
+   Go to: Project level>>Expand marketplace-oc>>Expand mobikul>>Expand res>>Select drawable folder update splash_screen & placeholder
+   
+   For Appbuilder:
+   Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>Expand res>>Select drawable folder update splash_screen & placeholder
+
+7) Change Dashboard image
+
+Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>Expand res>>Select drawable folder update navigation_drawer_header_bg
+
+8) Change status icon
+
+Go to: Project level>>Expand mobikul-oc>>Expand mobikul>>Expand res>>Select drawable folder update status
+
+9) Remove Social Login
+
+Go to: MainActivity,CartHandler,ProceedToCheckoutDialog remove Facebook,Google code
+
+10) Remove Google Wallet
+
+Go to: Remove file from Package Name:-->webkul.opencart.mobikul.GoogleWallet
+
+11) Don't forget to update version Code of client application to 1.0 in the build.gradle file while upadating application id in both Opencart MarketPlace & AppBuilder
+
+12) To change the color of toolbar icon you can change at once from the colors.xml on index icon_color.

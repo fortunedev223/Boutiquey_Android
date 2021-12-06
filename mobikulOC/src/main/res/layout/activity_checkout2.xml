@@ -1,0 +1,248 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.CheckoutHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="webkul.opencart.mobikul.CheckoutActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:orientation="vertical"
+            android:background="@color/off_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/heading_size_large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight=".23"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:id="@+id/billing_pipeView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_weight=".13"
+                        android:layout_gravity="center"
+                        android:background="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/billingAddressImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:background="@drawable/checkout_unselected"
+                        android:onClick="@{(v)->handler.onClickPaymentAddress(v)}" />
+                    <!--app:srcCompat="@drawable/ic_checkout_step_befor_1"-->
+
+                    <View
+                        android:id="@+id/billing_pipeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_weight=".1"
+                        android:layout_gravity="center"
+                        android:background="@color/light_gray_color1" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight=".25"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/billingAddressImage1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:background="@drawable/checkout_unselected"
+                        android:onClick="@{(v)->handler.onClickPaymentAddress1(v)}" />
+                    <!--app:srcCompat="@drawable/ic_checkout_step_notselected_5"-->
+                    <View
+                        android:id="@+id/billing_pipeView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_weight=".3"
+                        android:layout_gravity="center"
+                        android:background="@color/light_gray_color1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight=".25"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/shippingAddressImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:background="@drawable/checkout_unselected"
+                        android:onClick="@{(v)->handler.onClickShippingMethod(v)}" />
+                    <!--app:srcCompat="@drawable/ic_checkout_step_befor_2"-->
+                    <View
+                        android:id="@+id/payment_pipeView"
+                        android:layout_width="match_parent"
+                        android:layout_weight=".3"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:background="@color/light_gray_color1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight=".25"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/paymentMethodImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:background="@drawable/checkout_unselected"
+                        android:onClick="@{(v)->handler.onClickPaymentMethod(v)}" />
+                    <!--app:srcCompat="@drawable/ic_checkout_step_befor_3"-->
+                    <View
+                        android:id="@+id/confirm_pipeView"
+                        android:layout_width="@dimen/padding_righ_nav"
+                        android:layout_height="2dp"
+                        android:layout_weight=".2"
+                        android:layout_gravity="center"
+                        android:background="@color/light_gray_color1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/confirmOrderImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:background="@drawable/checkout_unselected"
+                        android:onClick="@{(v)->handler.onClickConfirmOrderMethod(v)}" />
+                    <!--app:srcCompat="@drawable/ic_checkout_step_befor_4"-->
+                    <View
+                        android:id="@+id/confirm_pipeView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_weight=".4"
+                        android:layout_gravity="center"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/billing_address"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/badge_text_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/shipping_address"
+                    android:textAlignment="center"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/badge_text_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/shipping_method"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/badge_text_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:minLines="2"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/payment_method_"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/badge_text_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:minLines="2"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/confirm_order_"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/badge_text_size" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/checkout_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

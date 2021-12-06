@@ -1,0 +1,62 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.RightNavAdapterModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.LeftNavHandlers" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/left_nav_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/card_elevetion_4"
+            android:layout_marginLeft="@dimen/padding_heading"
+            android:layout_marginRight="@dimen/padding_heading"
+            android:layout_marginTop="@dimen/card_elevetion_4"
+            android:background="@drawable/recyclerview_selector"
+            android:gravity="center_vertical"
+            android:onClick="@{(v)->handler.onClickCategory(v,data)}"
+            android:orientation="horizontal">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/margin5x"
+                    android:layout_marginLeft="@dimen/padding_heading" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <TextView
+                android:id="@+id/category_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/padding_heading"
+                android:layout_marginRight="@dimen/padding"
+                android:layout_weight=".13"
+                android:padding="@dimen/padding"
+                android:paddingLeft="@dimen/padding_righ_nav"
+                android:text="@{data.categoryName}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_small"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

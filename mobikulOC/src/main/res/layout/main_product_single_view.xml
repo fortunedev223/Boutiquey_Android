@@ -1,0 +1,234 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="valid"
+            type="webkul.opencart.mobikul.utils.Validation" />
+
+        <import type="android.view.View" />
+
+        <import type="android.R.color" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.HomePageAdapteModel" />
+
+        <variable
+            name="status"
+            type="webkul.opencart.mobikul.HomeFeatureStatus" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.MainActivityHandler" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/product_cardv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1px"
+        android:onClick="@{(v)->handler.onClickImage(v,data)}"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/product_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="@{(v)->handler.viewMore(v)}"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/productImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:onClick="@{(v)->handler.onClickImage(v,data)}"
+                                android:padding="@dimen/padding_6"
+                                app:dominantColor="@{data.dominiantColor}"
+                                app:loadImage="@{data.ImageUrl}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|top"
+                                android:layout_margin="@dimen/card_elevetion_2"
+                                android:background="@drawable/background_sale"
+                                android:paddingBottom="@dimen/card_elevetion_2"
+                                android:paddingLeft="@dimen/margin_8"
+                                android:paddingRight="@dimen/margin_8"
+                                android:paddingTop="@dimen/card_elevetion_2"
+                                android:text="@string/sale"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:visibility="@{valid.checkSpecialPrice(data.specialPrice)?View.VISIBLE:View.GONE}" />
+
+                            <ImageView
+                                android:id="@+id/wishlist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="end"
+                                android:onClick="@{(v)->handler.onClickAddToWishlist(v,data)}"
+                                android:padding="@dimen/padding_8"
+                                android:src="@{data.wishlist_status? @drawable/wishlist_selected :@drawable/wishlishv3_product_page}"
+                                tools:src="@drawable/wishlist_v3_unselected" />
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/productname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:minLines="2"
+                                android:paddingLeft="@dimen/card_elevetion_4"
+                                android:paddingRight="@dimen/card_elevetion_4"
+                                android:text="@{data.product}"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/text_size_small"
+                                tools:text="HTC ONE M7 LTE (SILVER-DARK)" />
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/padding"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:stepSize="0.01"
+                                android:visibility="gone" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/padding_heading"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/margin5x"
+                            android:paddingLeft="@dimen/margin5x"
+                            android:paddingRight="@dimen/margin5x"
+                            android:paddingTop="@dimen/card_elevetion_4">
+
+
+                            <TextView
+                                android:id="@+id/productprice"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".2"
+                                android:text="@{data.price}"
+                                android:textAlignment="viewStart"
+                                android:textColor="@{valid.checkSpecialPrice(data.specialPrice)?  @color/light_gray: @color/v3_price_color}"
+                                android:textSize="@dimen/text_size_medium1"
+                                android:textStyle="bold"
+                                android:visibility="@{valid.checkSpecial(data.specialPrice)? View.VISIBLE:View.VISIBLE}"
+                                tools:text="$122" />
+
+                            <TextView
+                                android:id="@+id/special_product_price"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".4"
+                                android:text="@{valid.checkSpecialAtHome(data.specialPrice,data.formattedSpecial,data.price)}"
+                                android:textColor="@color/v3_price_color"
+                                android:textSize="@dimen/text_size_medium1"
+                                android:textStyle="bold"
+                                android:visibility="@{valid.checkSpecialPrice(data.specialPrice)? View.VISIBLE:View.GONE}"
+                                tools:text="$122" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center"
+                                android:onClick="@{(v)->handler.onClickAddToWishlist(v,data)}"
+                                android:src="@{data.wishlist_status? @drawable/wishlist_selected :@drawable/wishlishv3_product_page}"
+                                android:visibility="invisible"
+                                tools:src="@drawable/wishlist_v3_unselected" />
+                            <!--app:srcCompat="@drawable/wishlist_v3_unselected"-->
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:onClick="@{(v)->handler.onClickAddToCart(v,data)}"
+                            android:padding="@dimen/padding"
+                            android:text="@string/add_to_cart"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_view_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:onClick="@{(v)->handler.viewMore(v)}"
+                    android:orientation="vertical">
+                    <!--android:visibility="@{status.isMore &amp;&amp; status.position==5? View.VISIBLE :View.GONE}">-->
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/view_more" />
+
+                    <TextView
+                        android:id="@+id/view_more_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_margin="@dimen/card_elevetion_4"
+                        android:padding="@dimen/padding_8"
+                        android:text="@string/view_more1"
+                        android:textAlignment="center"
+                        android:textColor="@color/accent_color"
+                        android:textSize="@dimen/text_size_medium1"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

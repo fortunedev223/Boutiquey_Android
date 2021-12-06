@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boutiquey</string>
+    <string name="facebook_app_id">1389270404421194</string>
+    <string name="facebook_app_id_protocol">fb1389270404421194</string>
+    <string name="app_store_url"><![CDATA[https://play.google.com/store/apps/details?id=com.webkul.mobikulMP&hl=en]]></string>
+    <string name="default_web_client_id">409077807669-34vf7446ug1kgr5cv69fe5c2glnr0q6h.apps.googleusercontent.com</string>
+    <string name="map_key">AIzaSyAfTibIC0Q2d6Sw2f1iSot6AyaPpwR4DkI</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.roomdatabase.RecentSearchTable" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.RecentSearchHandler" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:onClick="@{(v)->handler.onClickSearchProd(v,data)}">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin5x">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circular_background"
+                android:src="@drawable/ic_search"
+                android:tint="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing=".05"
+                android:maxLines="2"
+                android:maxWidth="@dimen/image_100dp"
+                android:minLines="2"
+                android:padding="@dimen/margin5x"
+                android:text="@{data.word}"
+                tools:text="Hello World" />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

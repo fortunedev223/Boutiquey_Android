@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="image_border_start">#0097A7</color>
+    <color name="image_border_end">#FFFFFF</color>
+    <color name="image_border_center">#50000000</color>
+    <color name="black_overlay">#80000000</color>
+    <!-- Link color is used for connecting links in a activity e,g product name order list etc. -->
+    <color name="link_color">#0077CC</color>
+    <!--<color name="dark_primary_color">#1976D2</color> -->
+    <!--<color name="dark_primary_color">#0288D1</color>-->
+    <!--<color name="dark_primary_color">#0288D1</color>-->
+    <color name="background_color_transparent">#8700bbd3</color>
+
+    <color name="secondary_text_color">#727272</color>
+    <color name="color_gray">#626262</color>
+    <color name="tab_background_selected">@color/accent_color</color>
+    <color name="tab_background_unselected">#5E4237</color>
+    <color name="error_background_color">#F2DEDE</color>
+    <color name="error_text_color">#A94442</color>
+    <color name="error_border_color">#E9C8C8</color>
+    <color name="white_transparent">#79ffffff</color>
+    <color name="filter_color_selected">#FEC107</color>
+    <!-- <color name="primary_color">#2196F3</color> -->
+    <!--<color name="primary_color">#03A9F4</color>-->
+    <color name="selected_tab_color">#FEF076</color>
+    <color name="accent_color_pressed">#661800</color>
+    <color name="border_color">#CCCCCC</color>
+    <color name="light_border_color">#1F000000</color>
+    <color name="black">#000000</color>
+    <color name="black_lite">#363535</color>
+    <color name="product_page_text_color">#323C3F</color>
+    <color name="heading_color_blue">#317091</color>
+    <color name="background_color_blue">#23A1D1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="off_white">#f1f1f1</color>
+    <color name="background_color">#F1F1F1</color>
+    <color name="tab_layout_background">#806B493D</color>
+    <color name="edit_btn_color">#DF5C39</color>
+    <color name="delete_btn_color">#B53A34</color>
+    <color name="light_gray_color">#EEEEEE</color>
+    <color name="light_gray_color1">#CCCCCC</color>
+    <color name="transparent_gray">#59ffffff</color>
+    <color name="light_gray">#9B9B9B</color>
+    <color name="textColorBlue">#31708F</color>
+    <color name="gray">#626262</color>
+    <color name="v3_price_color">#00C752</color>
+    <color name="line_color">#D7D7D7</color>
+    <color name="drawer_label">#787777</color>
+    <color name="trans_parent">#80000000</color>
+
+</resources>

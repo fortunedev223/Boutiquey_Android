@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Boutiquey_Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Boutiquey_Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobikulOC/Boutiquey_Android.mobikulOC.iml" filepath="$PROJECT_DIR$/.idea/modules/mobikulOC/Boutiquey_Android.mobikulOC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paytabs_sdk-v3.0.2/Boutiquey_Android.paytabs_sdk-v3.0.2.iml" filepath="$PROJECT_DIR$/.idea/modules/paytabs_sdk-v3.0.2/Boutiquey_Android.paytabs_sdk-v3.0.2.iml" />
+    </modules>
+  </component>
+</project>

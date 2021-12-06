@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="webkul.opencart.mobikul.activity.ReturnInfo">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/return_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/margin5x"
+                    android:background="@color/light_gray_color1" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/return_id"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/return_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="123" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/order_id"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/order_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="123" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:padding="@dimen/card_elevetion_4"
+                        android:text="@string/date_added"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/date_added"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="12/3/2019" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/order_date"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/order_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="123" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/margin5x"
+                    android:background="@color/light_gray_color1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin5x"
+                    android:text="@string/product_information_reason_for_return"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_gray_color1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/product_name"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="HTC PHONE" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/model"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/model"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="123" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/quantity"
+                        android:textAlignment="viewStart"
+                        android:textColor="#797979" />
+
+                    <TextView
+                        android:id="@+id/quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding"
+                        android:paddingRight="@dimen/card_elevetion_4"
+                        android:paddingTop="@dimen/margin5x"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        tools:text="3" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_gray_color1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:text="@string/reason"
+                    android:textAlignment="viewStart"
+                    android:textColor="#797979" />
+
+                <TextView
+                    android:id="@+id/reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    tools:text="Faulty, please supply details" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:text="@string/opened"
+                    android:textAlignment="viewStart"
+                    android:textColor="#797979" />
+
+                <TextView
+                    android:id="@+id/opened"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    tools:text="Faulty, please supply details" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:text="@string/comment"
+                    android:textAlignment="viewStart"
+                    android:textColor="#797979" />
+
+                <TextView
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:paddingBottom="@dimen/margin5x"
+                    android:paddingLeft="@dimen/padding"
+                    android:paddingRight="@dimen/card_elevetion_4"
+                    android:paddingTop="@dimen/margin5x"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    tools:text="Faulty, please supply details" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+
+</LinearLayout>

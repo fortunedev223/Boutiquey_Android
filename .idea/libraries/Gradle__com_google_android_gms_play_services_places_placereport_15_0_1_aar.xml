@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-places-placereport:15.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9764f5eb1423c5ab48f91d23b9fa1e9f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9764f5eb1423c5ab48f91d23b9fa1e9f/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9764f5eb1423c5ab48f91d23b9fa1e9f/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

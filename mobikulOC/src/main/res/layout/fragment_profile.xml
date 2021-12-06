@@ -1,0 +1,663 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import
+            alias="project"
+            type="webkul.opencart.mobikul.BuildConfig" />
+
+        <import
+            alias="valid"
+            type="webkul.opencart.mobikul.utils.Validation" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.loginlistener.LoginChecker" />
+
+        <variable
+            name="handlers"
+            type="webkul.opencart.mobikul.handlers.MainActivityHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{data.userLogin?View.VISIBLE:View.GONE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_heading"
+                    android:src="@drawable/placeholder_customer_profile"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_elevetion_4"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".3"
+                        android:onClick="@{(v)->handlers.onClickWishlist(v)}"
+                        android:padding="@dimen/margin5x">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/accent_color"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/margin5x">
+
+                            <TextView
+                                android:id="@+id/wishlist_dashboard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/margin5x"
+
+                                android:text="@string/title_activity_my_wishlist"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_border_color" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:onClick="@{(v)->handlers.onClickAddressBook(v)}"
+                        android:paddingTop="@dimen/margin5x">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/accent_color"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/margin5x">
+
+                            <TextView
+                                android:id="@+id/addressbook_dashboard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/margin5x"
+                                android:text="@string/title_activity_addr_book"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_border_color" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:onClick="@{(v)->handlers.onClickMyOrders(v)}"
+                        android:paddingTop="@dimen/margin5x">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/accent_color"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/margin5x">
+
+                            <TextView
+                                android:id="@+id/order_dashboard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/margin5x"
+                                android:text="@string/my_orders"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    app:background="@drawable/ripple_effect" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding_heading"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickNotification(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/notification_menu_title"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/heading_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickDashBoard(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/dashboard_action_title"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+                <!--android:drawableLeft="@drawable/ic_acc_info_account"-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/edit_accout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding_heading"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickEditAccountInformation(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/_edit_your_account_information"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/change_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickChangePassword(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/change_your_password"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/download_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickDownloadProducts(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/title_activity_my_downloads"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/reward_points"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickReward(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/your_reward_points"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <!--android:drawableLeft="@drawable/ic_reward_point"-->
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/transaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickTransaction(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/your_transactions"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/order_return"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickOrderReturn(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/return_request"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/add_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickAddProduct(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/add_product"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/product_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickProductList(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/product_list"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:id="@+id/seller_page_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="gone" />
+                <!--android:visibility="gone"-->
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/seller_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/seller_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickSellerProfile(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/title_seller_page"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+                <!--android:drawableLeft="@drawable/ic_transaction"-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/seller_dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickSellerDashboard(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/seller_dashboard"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{data.seller?View.VISIBLE:View.GONE}"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/seller_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickSellerOrder(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/seller_order"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:background="@drawable/add_to_cart_selector">
+
+                    <TextView
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/recyclerview_selector"
+                        android:drawablePadding="@dimen/padding_heading"
+                        android:onClick="@{(v)->handlers.onClickLogout(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/logout_title"
+                        android:textColor="@color/black_overlay"
+                        android:textSize="@dimen/text_size_small" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_border_color" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/button_padding"
+            android:visibility="@{data.userLogin?View.GONE:View.VISIBLE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/button_padding"
+                android:text="@string/login_text"
+                android:textColor="@color/black_lite"
+                android:textSize="@dimen/text_size_medium1"
+                android:textStyle="bold" />
+
+            <android.support.design.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/padding_6"
+                android:layout_marginTop="@dimen/padding"
+                android:onClick="@{(v)->handlers.onClickLogin(v)}"
+                android:padding="@dimen/button_padding"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium1"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/padding_heading"
+                tools:ignore="SpUsage" />
+
+            <LinearLayout
+                android:id="@+id/social_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{project.isDemo ? View.VISIBLE : View.GONE}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        android:background="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".5"
+                        android:text="@string/continue_with"
+                        android:textAlignment="center"
+                        android:textColor="@color/black_lite"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        android:background="@color/light_gray" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:orientation="horizontal">
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/facebook_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding"
+                        android:layout_marginRight="@dimen/padding"
+                        android:layout_weight=".5"
+                        android:backgroundTint="#3B5999"
+                        android:onClick="@{(v)->handlers.onClickFacebook(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/facebook"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/margin_8" />
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/google_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding"
+                        android:layout_marginRight="@dimen/padding"
+                        android:layout_weight=".5"
+                        android:backgroundTint="#D34837"
+                        android:onClick="@{(v)->handlers.onClickGmail(v)}"
+                        android:padding="@dimen/padding"
+                        android:text="@string/google"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/margin_8" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding"
+                android:padding="@dimen/button_padding"
+                android:text="@string/sign_up_text"
+                android:textColor="@color/black_lite"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold" />
+
+            <android.support.design.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding"
+                android:onClick="@{(v)->handlers.onClickSignUp(v)}"
+                android:padding="@dimen/button_padding"
+                android:text="@string/signup_action_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium1"
+                android:textStyle="bold"
+                app:background="@drawable/add_to_cart_selector"
+                app:cornerRadius="@dimen/padding_heading"
+                tools:ignore="SpUsage" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

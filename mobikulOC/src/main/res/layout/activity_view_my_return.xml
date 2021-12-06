@@ -1,0 +1,446 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@+id/mostParenLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:fillViewport="true"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/Container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/heading"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary_color"
+                        android:padding="6dp"
+                        android:text="@string/account_action_title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/heading_size_large"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#EEEEEE"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/subHeading1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="6dp"
+                            android:text="@string/return_information"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_medium"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            card_view:cardUseCompatPadding="true">
+
+                            <TableLayout
+                                android:id="@+id/tableLayout"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/table_border"
+                                    android:padding="6dp"
+                                    android:text="@string/return_details"
+                                    android:textColor="@color/heading_color" />
+
+                                <TableRow android:padding="5dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text="@string/return_id_"
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text=" : "
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:id="@+id/return_id"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text=":"
+                                        android:textColor="@color/gray"
+                                        android:textStyle="bold" />
+
+                                </TableRow>
+
+                                <TableRow android:padding="5dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text="@string/date_added_"
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text=" : "
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:id="@+id/date_added"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text=":"
+                                        android:textColor="@color/gray"
+                                        android:textStyle="bold" />
+
+                                </TableRow>
+
+                                <TableRow android:padding="5dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text="@string/order_id_b"
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text=" : "
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:id="@+id/order_id"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text=":"
+                                        android:textColor="@color/gray"
+                                        android:textStyle="bold" />
+                                </TableRow>
+
+                                <TableRow android:padding="5dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text="@string/order_date"
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:text=" : "
+                                        android:textColor="@color/gray" />
+
+                                    <TextView
+                                        android:id="@+id/order_date"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="4"
+                                        android:text=":"
+                                        android:textColor="@color/gray"
+                                        android:textStyle="bold" />
+
+                                </TableRow>
+                            </TableLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/subHeading2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="6dp"
+                            android:text="@string/product_information_reason_for_return"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/heading_size_medium"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            card_view:cardUseCompatPadding="true">
+
+                            <TableLayout
+                                android:id="@+id/tableLayout1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="20dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/product_name"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/model"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:gravity="end"
+                                        android:padding="6dp"
+                                        android:text="@string/quantity"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/product_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:ems="6"
+                                        android:padding="6dp"
+                                        android:singleLine="false"
+                                        android:text="@string/date_added"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:id="@+id/model"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/description"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:id="@+id/quantity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:gravity="end"
+                                        android:padding="6dp"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+                                </TableRow>
+                            </TableLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            card_view:cardUseCompatPadding="true">
+
+                            <TableLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/reason"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/opened"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/action"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/reasonValue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/date_added"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:id="@+id/openedValue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text="@string/description"
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+
+                                    <TextView
+                                        android:id="@+id/actionValue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/table_border"
+                                        android:padding="6dp"
+                                        android:text=" "
+                                        android:textColor="@color/heading_color"
+                                        android:textSize="@dimen/table_heading_size" />
+                                </TableRow>
+                            </TableLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                        <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="@color/white"-->
+                        <!--card_view:cardUseCompatPadding="true">-->
+
+                        <!--<TableLayout-->
+                        <!--android:id="@+id/tableLayout2"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:layout_marginTop="10dp">-->
+
+                        <!--</TableLayout>-->
+                        <!--</android.support.v7.widget.CardView>-->
+
+                        <LinearLayout
+                            android:id="@+id/return_comments_layput"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/table_border"
+                                android:padding="6dp"
+                                android:text="@string/return_comments"
+                                android:textColor="@color/heading_color"
+                                android:textSize="@dimen/table_heading_size" />
+
+                            <TextView
+                                android:id="@+id/return_comments_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/table_border"
+                                android:padding="6dp"
+                                android:textColor="@color/heading_color" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/signupprogress"
+                    style="\?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</layout>

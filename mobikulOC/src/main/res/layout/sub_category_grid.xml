@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.model.SubcategoryModel.Category" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.SubCategoryGridHandler" />
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/card_elevetion_4"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->handler.onclickCategory(v,data)}">
+
+            <LinearLayout
+                android:id="@+id/subcategory_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin5x"
+                android:layout_marginEnd="@dimen/margin5x"
+                android:layout_marginStart="@dimen/margin5x"
+                android:background="@color/white"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/subCategoryImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:dominantColor="@{data.dominantColor}"
+                app:loadImage="@{data.image}" />
+
+            <TextView
+                android:id="@+id/subcategory_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@color/transparent_grey"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:maxLength="27"
+                android:maxLines="2"
+                android:minLines="2"
+                android:padding="@dimen/card_elevetion_4"
+                android:text="@{data.name}"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="abcabcabcabcabcabcabcabcabcabcabcabcabc
+                abcabcabcabcabcabcabcabcabcabcabcabcabc" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>

@@ -1,0 +1,513 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.loginlistener.LoginChecker" />
+
+        <variable
+            name="homedata"
+            type="webkul.opencart.mobikul.model.GetHomePage.HomeDataModel" />
+
+        <variable
+            name="handlers"
+            type="webkul.opencart.mobikul.handlers.MainActivityHandler" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/main_layout_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/bottome_navigation"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/toolbar"
+                            layout="@layout/toolbar" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/appbar">
+
+                    <FrameLayout
+                        android:id="@+id/content_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layoutDirection="ltr">
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/scroll_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/pagerLayout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/margin_8"
+                                    android:orientation="vertical">
+
+                                    <RelativeLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <android.support.v4.view.ViewPager
+                                                android:id="@+id/banner_pager"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                app:setPager="@{homedata.banners}" />
+
+                                            <LinearLayout
+                                                android:id="@+id/dot_group"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentBottom="true"
+                                                android:layout_marginTop="8dp"
+                                                android:gravity="center"
+                                                android:orientation="horizontal"
+                                                android:padding="@dimen/margin5x"
+                                                android:visibility="gone" />
+                                        </LinearLayout>
+
+
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/subCategoryRecyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/card_elevetion_2"
+                                    android:layout_marginLeft="@dimen/margin5x"
+                                    android:layout_marginTop="@dimen/padding_heading"
+                                    android:layoutDirection="locale"
+                                    app:setSubCatData="@{homedata.categories}" />
+
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/product_carousal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:setCarousal="@{homedata.modules}" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/margin_8"
+                                        android:background="#ECEFF1" />
+
+                                    <LinearLayout
+                                        android:id="@+id/browseByBrands_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="@dimen/padding"
+                                                android:layout_marginLeft="@dimen/padding_heading"
+                                                android:layout_marginRight="@dimen/padding_heading"
+                                                android:layout_marginTop="@dimen/padding_8"
+                                                android:layoutDirection="locale"
+                                                android:orientation="horizontal">
+
+                                                <TextView
+                                                    android:id="@+id/browseByBrands"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:layout_weight=".5"
+                                                    android:gravity="center_vertical"
+                                                    android:text="@string/browse_by_brands"
+                                                    android:textColor="#030303"
+                                                    android:textSize="@dimen/text_size_medium" />
+
+                                                <TextView
+                                                    android:id="@+id/browseByBrands_view_all"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center_vertical"
+                                                    android:background="@drawable/border"
+                                                    android:gravity="center_vertical"
+                                                    android:onClick="@{(v) -> handlers.onClickViewAll(v)}"
+                                                    android:paddingBottom="@dimen/padding_6"
+                                                    android:paddingLeft="@dimen/padding"
+                                                    android:paddingRight="@dimen/padding"
+                                                    android:paddingTop="@dimen/padding_6"
+                                                    android:text="@string/view_all"
+                                                    android:textColor="#030303"
+                                                    android:textSize="@dimen/text_size_small"
+                                                    android:textStyle="bold" />
+
+                                            </LinearLayout>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:background="@color/light_gray_color"
+                                                android:visibility="gone" />
+
+                                            <android.support.v7.widget.RecyclerView
+                                                android:id="@+id/carouselScroller"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:layout_marginBottom="@dimen/padding"
+                                                android:layout_marginLeft="@dimen/margin_8"
+                                                android:layout_marginRight="@dimen/margin_8"
+                                                android:background="#ECEFF1"
+                                                android:gravity="center"
+                                                android:orientation="vertical"
+                                                app:setBrands="@{homedata.carousalList}" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/margin_8"
+                                        android:background="#ECEFF1" />
+
+                                    <LinearLayout
+                                        android:id="@+id/recent_viewed_container"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="@dimen/padding"
+                                            android:layout_marginLeft="@dimen/padding_heading"
+                                            android:layout_marginRight="@dimen/padding_heading"
+                                            android:layout_marginTop="@dimen/padding_8"
+                                            android:text="@string/recent_view"
+                                            android:textColor="#030303"
+                                            android:textSize="@dimen/text_size_medium" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:background="@color/light_gray_color" />
+
+                                        <android.support.v7.widget.RecyclerView
+                                            android:id="@+id/recent_viewed"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_8"
+                                    android:layout_marginTop="@dimen/padding_heading"
+                                    android:text="@string/reach_bottom"
+                                    android:textAlignment="center"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <android.support.design.button.MaterialButton
+                                    android:id="@+id/to_top"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/padding_heading"
+                                    android:text="@string/back_to_home"
+                                    android:textAlignment="center"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="50dp" />
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+
+                    </FrameLayout>
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <ProgressBar
+                    android:id="@+id/main_progress_bar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="220dp" />
+
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/navigation"
+                layout="@layout/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="false">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#efefef"
+                        android:padding="@dimen/padding_heading"
+                        android:paddingTop="@dimen/padding"
+                        android:text="@string/shop_for"
+                        android:textColor="@color/drawer_label"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray_color1" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/nav_drawer_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingTop="@dimen/margin5x"
+                        app:setNavData="@{homedata.categories}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray_color1" />
+
+                    <LinearLayout
+                        android:id="@+id/language_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{homedata.languages.languages.size()&lt;=1?View.GONE:View.VISIBLE}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#efefef"
+                            android:padding="@dimen/padding_heading"
+                            android:text="@string/language"
+                            android:textColor="@color/drawer_label"
+                            android:textSize="@dimen/text_size_small"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/light_gray_color1" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/nav_drawer_recycler_view_language"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingBottom="@dimen/margin5x"
+                            android:paddingTop="@dimen/margin5x"
+                            app:setLanguage="@{homedata.languages}" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray_color1" />
+
+                    <LinearLayout
+                        android:id="@+id/currency_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{homedata.currencies.currencies.size()&lt;=1?View.GONE:View.VISIBLE}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#efefef"
+                            android:padding="@dimen/padding_heading"
+                            android:text="@string/currency"
+                            android:textColor="@color/drawer_label"
+                            android:textSize="@dimen/text_size_small"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/light_gray_color1" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/nav_drawer_recycler_view_currency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingBottom="@dimen/padding_heading"
+                            android:paddingTop="@dimen/margin5x"
+                            app:setCurrencey="@{homedata.currencies}" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/card_elevetion_2"
+                        android:background="@color/light_gray_color1"
+                        android:visibility="@{(homedata.gdprStatus==1 &amp;&amp; homedata.gdprNotificationStatus==1)? View.VISIBLE :View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/notification_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/padding"
+                        android:background="#f1f1f1"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickNotificationInfo(v,homedata)}"
+                        android:paddingBottom="@dimen/button_padding"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingTop="@dimen/button_padding"
+                        android:text="@string/notification_info"
+                        android:textColor="@color/drawer_label"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold"
+                        android:visibility="@{(homedata.gdprStatus==1 &amp;&amp; homedata.gdprNotificationStatus==1)? View.VISIBLE :View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/card_elevetion_2"
+                        android:background="@color/light_gray_color1"
+                        android:visibility="@{(homedata.gdprStatus==1 &amp;&amp; homedata.gdprNotificationStatus==1)? View.VISIBLE :View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/seller_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="#f1f1f1"
+                        android:drawablePadding="@dimen/padding"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->handlers.onClickSellerProfile(v)}"
+                        android:paddingBottom="@dimen/margin5x"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingTop="@dimen/margin5x"
+                        android:text="@string/title_seller_page"
+                        android:textColor="@color/drawer_label"
+                        android:textSize="@dimen/heading_size_small"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/card_elevetion_2"
+                        android:background="@color/light_gray_color1"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#efefef"
+                        android:padding="@dimen/padding_heading"
+                        android:text="@string/about"
+                        android:textColor="@color/drawer_label"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold"
+                        android:visibility="@{homedata.footerMenu.size()!=0?View.VISIBLE:View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/light_gray_color1"
+                        android:visibility="visible" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/about_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:setAbout="@{homedata.footerMenu}" />
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</layout>

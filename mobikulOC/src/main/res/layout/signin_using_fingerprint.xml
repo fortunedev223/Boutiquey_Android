@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/login_action_title"
+        android:layout_marginBottom="20dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/heading_size_medium"
+        android:background="?attr/colorAccent"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:text="Start Using Fingerprint"
+        android:layout_height="wrap_content"/>
+
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/finger_print_svg"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="10dp"
+        android:text="Authenticate With Fingerprint"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

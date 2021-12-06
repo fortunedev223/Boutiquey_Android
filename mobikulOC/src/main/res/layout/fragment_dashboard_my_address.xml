@@ -1,0 +1,123 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="webkul.opencart.mobikul.fragment.DashboardMyAddress">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EEEEEE"
+                    android:fillViewport="true"
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/new_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            android:onClick="addNewAddress"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/padding">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/add_address_book" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="@dimen/margin5x"
+                                android:text="@string/add_new_address"
+                                android:textAlignment="center"
+                                android:textColor="@color/accent_color"
+                                android:textSize="@dimen/heading_size_medium" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/addrbookContainer"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/addNewAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/activity_vertical_margin"
+                                android:layout_marginRight="10dp"
+                                android:onClick="addNewAddress"
+                                android:padding="@dimen/button_padding"
+                                android:text="@string/new_address"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#FFFFFF"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/addrbookdataContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                tools:context="com.webkul.mcom.AddrBookActivity">
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/address_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:id="@+id/addrbookitemslayout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/addrbookprogress"
+                            style="\?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+                <View
+                    android:id="@+id/shadow_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/toolbar_dropshadow" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

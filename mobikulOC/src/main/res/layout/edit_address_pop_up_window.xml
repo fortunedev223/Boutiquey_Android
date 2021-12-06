@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:background="@color/gray"
+    android:layout_margin="@dimen/padding_heading"
+    android:layout_height="wrap_content">
+ <TextView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:textColor="@color/white"
+     android:textAlignment="center"
+     android:id="@+id/edit"
+     android:padding="@dimen/margin5x"
+     android:text="@string/edit"/>
+<View
+    android:layout_width="100dp"
+    android:background="@color/white"
+    android:layout_height="1dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin5x"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:id="@+id/delete"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"/>
+</LinearLayout>

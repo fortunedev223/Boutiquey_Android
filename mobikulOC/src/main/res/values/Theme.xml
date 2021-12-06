@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--     <style name="Theme" parent="android:Theme.Holo.Light"> -->
+<!--         <item name="pageMargin">2sp</item> -->
+<!--         <item name="android:windowTitleSize">20dip</item> -->
+<!--         <item name="android:actionOverflowButtonStyle">@style/OverFlow</item> -->
+<!--     </style> -->
+
+<!--     <style name="Theme.Green"> -->
+<!--         <item name="appColor">@style/appColor_gr</item> -->
+<!--         <item name="android:actionBarStyle">@style/MyActionBar_gr</item> -->
+<!--         <item name="elvDrawerHeaderColor">@style/elvDrawerHeaderColor_gr</item> -->
+<!--         <item name="newPriceTextColor">@style/newPriceTextColor_gr</item> -->
+<!--         <item name="dashboardActions">@style/dashboardActions_gr</item> -->
+<!--     </style> -->
+
+<!--     <style name="Theme.Blue"> -->
+<!--         <item name="appColor">@style/appColor_bl</item> -->
+<!--         <item name="elvDrawerHeaderColor">@style/elvDrawerHeaderColor_bl</item> -->
+<!--         <item name="android:actionBarStyle">@style/MyActionBar_bl</item> -->
+<!--         <item name="newPriceTextColor">@style/newPriceTextColor_bl</item> -->
+<!--         <item name="dashboardActions">@style/dashboardActions_bl</item> -->
+<!--     </style> -->
+
+</resources>

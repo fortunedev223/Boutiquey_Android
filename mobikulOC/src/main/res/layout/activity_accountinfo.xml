@@ -1,0 +1,323 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_edit_layout"
+            android:layout_below="@id/appbar"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/accinfoContainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/accinfoheading"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorAccent"
+                        android:padding="5dp"
+                        android:text="@string/accountinfo_action_title"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_vertical_margin"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        tools:context="com.webkul.mcom.DashboardActivity">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/margin5x"
+                            android:visibility="gone">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/profile_image"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:padding="@dimen/margin5x"
+                                android:src="@drawable/profit" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="bottom|left"
+                                android:onClick="clickCamera"
+                                app:srcCompat="@drawable/ic_camera" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="bottom|right"
+                                android:onClick="takePhoto"
+                                app:srcCompat="@drawable/edit" />
+                        </FrameLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/email"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding">
+
+                            <EditText
+                                android:id="@+id/accinfoemailValue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/accinfoemailTitle" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:id="@+id/accinfoContainer1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_heading"
+                            android:orientation="vertical">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/firstname"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding">
+
+                                <EditText
+                                    android:id="@+id/accinfofirstnameValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/signupFormFirstNameTitle" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/lastname"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding">
+
+                                <EditText
+                                    android:id="@+id/accinfolastnameValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/accinfolastnameTitle" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/phone"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding">
+
+                                <EditText
+                                    android:id="@+id/accinfoPhoneValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/telephone"
+                                    android:inputType="number" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/fax"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding">
+
+                                <EditText
+                                    android:id="@+id/accinfoFaxValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/fax"
+                                    android:inputType="number" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/passwrodLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/password"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding"
+                                app:passwordToggleEnabled="true">
+
+                                <EditText
+                                    android:id="@+id/accinfonewpasswordValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/new_password"
+                                    android:inputType="textPassword" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/confirmpassword"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding"
+                                app:passwordToggleEnabled="true">
+
+                                <EditText
+                                    android:id="@+id/accinfonewconfirmpasswordValue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/confirm_password"
+                                    android:inputType="textPassword" />
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/checkbox_gdpr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="@string/gdpr_check_value"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/button1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight=".5"
+                            android:onClick="validate"
+                            android:padding="10dp"
+                            android:text="@string/save"
+                            android:textColor="#FFFFFF"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/change_password_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="@dimen/padding_heading"
+                        android:layout_marginRight="@dimen/padding_heading"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".5"
+                        android:padding="10dp"
+                        android:text="Account GDPR Information"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/bottom_edit_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/margin5x"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <android.support.design.button.MaterialButton
+                            android:id="@+id/cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="@dimen/padding_heading"
+                            android:layout_marginRight="@dimen/padding_heading"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight=".5"
+                            android:onClick="finish"
+                            android:padding="10dp"
+                            android:text="Cancel"
+                            android:textColor="@color/white"
+                            app:cornerRadius="@dimen/margin_8" />
+
+                        <android.support.design.button.MaterialButton
+                            android:id="@+id/button2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="@dimen/padding_heading"
+                            android:layout_marginRight="@dimen/padding_heading"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight=".5"
+                            android:onClick="validate"
+                            android:padding="10dp"
+                            android:text="@string/save"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="@dimen/margin_8" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/accountinfoprogress"
+            style="\?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="new_version_available">Es gibt eine neuere Version von Mobikul Anwendung zur Verfügung, klicken Sie auf OK, um jetzt ein Upgrade?</string>
+    
+    
+    
+    <!-- String keywords used in application -->
+    <string name="from">von:</string>
+    <string name="to">bis:</string>
+    <string name="to2">to2</string>
+    <string name="as_low_as">so niedrig wie: </string>
+    <string name="starting_at">beginnt um: </string>
+    <string name="view_all_product">Alle anzeigen Produkt-</string>
+    <string name="Success">Erfolg</string>
+    <string name="Error">Irrtum</string>
+    <string name="of_toast_for_no_of_item">" Toast für keinen der Artikel "</string>
+    <string name="save">sparen</string>
+    <string name="home">Zuhause</string>
+
+    <!-- Response/Error text string to user -->
+    <string name="password_required">Passwort wird benötigt!</string>
+    <string name="password_length_check">Das Passwort muss mindestens 6 Zeichen lang sein und Führende oder nachfolgende Leerzeichen werden ignoriert.</string>
+    <string name="new_password_length_check">Neues Passwort muss mindestens 6 Zeichen lang sein und Führende oder nachfolgende Leerzeichen werden ignoriert.</string>
+    <string name="is_require_text"> Wird benötigt!</string>
+    <string name="enter_valid_email">Bitte geben Sie eine gültige Email-Adresse ein!</string>
+    <string name="please_wait">Warte bitte</string>
+    <string name="processing_request_response">während wir Ihre Anfrage bearbeiten</string>
+    <string name="not_logged_in_alert">Sie sind nicht eingeloggt . Logge dich ein, um fortzufahren</string>
+    <string name="login_first_message">Bitte loggen Sie sich zuerst ein</string>
+    <string name="added_to_wishlist">Ihr Produkt erfolgreich zu Ihrer Wunschliste hinzuzufügen</string>
+    <string name="intenet_unavailable">Internet nicht verfügbar ist, Kreuz überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut</string>
+
+    <!-- Strings related to layered Navigation pages Activity -->
+    <string name="current_shop_by">Filtern nach:</string>
+
+    <!-- Strings related to Checkout pages Activity -->
+    <string name="paypal_custom">Dies ist Text, der mit der Zahlung, die die App verwenden können zugeordnet werden.</string>
+    <string name="paypal_msg1">Zukünftige Zahlungs Code von PayPal erhalten</string>
+    <string name="paypal_msg2">Profil-Sharing-Code von PayPal erhalten</string>
+    <string name="paypal_msg3">Client Metadaten Id vom SDK erhalten</string>
+    <string name="save_in_add_book">Im Adressbuch speichern</string>
+    <string name="new_address">Neue Adresse</string>
+    <string name="loading">Wird geladen ...</string>
+    <string name="alert_sipping_method">Bitte geben Sie Versandart</string>
+    <string name="msg_sipping_method">Sind derzeit leider keine Angebote für diese Bestellung zu diesem Zeitpunkt zur Verfügung.</string>
+    <string name="continue1">WEITER</string>
+    <string name="alert_no_shipping_method_available">Ihre Bestellung kann zu diesem Zeitpunkt nicht, da es keine Versandmethoden für Sie zur Verfügung abgeschlossen sein. Bitte die notwendigen Änderungen in Ihrer Lieferadresse.</string>
+    <string name="required_card_no">Kartennummer ist erforderlich,</string>
+    <string name="required_cvc">CVC ist erforderlich</string>
+    <string name="order_placed">Ihre Bestellung</string>
+    <string name="card_charged">Card Charged </string>
+    <string name="invalid_card_number">Die von Ihnen eingegebenen Kartennummer ist ungültig</string>
+    <string name="invalid_exp_dater">Die von Ihnen eingegebenen Verfallsdatum ist ungültig</string>
+    <string name="invalid_cvc">Der CVC-Code, den Sie eingegeben ist ungültig</string>
+    <string name="invalid_card_details">Die Details Karte, die Sie eingegeben haben, sind ungültig</string>
+    <string name="wait_for_a_moment">Warte einen Moment</string>
+    <string name="validation_error">Validierungsfehler</string>
+    <string name="fname_is_required">firstname ist erforderlich!</string>
+    <string name="lname_is_required">lastname ist erforderlich!</string>
+    <string name="telephone_is_required">Telefonnummer ist erforderlich!</string>
+    <string name="street_address_is_required">Adresse ist erforderlich!</string>
+    <string name="city_address_is_required">Stadt ist erforderlich!</string>
+    <string name="zip_is_required">zip ist Pflicht!</string>
+    <string name="state_is_required">Zustand ist Pflicht!</string>
+    <string name="card_number">Kartennummer</string>
+    <string name="cvc">CVC</string>
+    <string name="click_for_demo_card_detail">Klicken Sie hier für Check-Demo-Daten</string>
+    <string name="checkout">AUSCHECKEN</string>
+    <string name="billing_information">ABRECHNUNGSDATEN</string>
+    <string name="select_billing_address_enter_new_one">Wählen Sie eine Rechnungsadresse aus dem Adressbuch oder geben Sie eine neue Adresse.</string>
+    <string name="select_shipping_address_enter_new_one">Wählen Sie eine Lieferadresse aus dem Adressbuch oder geben Sie eine neue Adresse.</string>
+    <string name="ship_to_this_add">An diese Adresse liefern</string>
+    <string name="ship_to_different_add">Ship to andere Adresse</string>
+    <string name="shippng_info">VERSANDINFORMATIONEN</string>
+    <string name="use_billing_add">Rechnungsadresse verwenden</string>
+    <string name="shipping_method">VERSCHIFFEN-METHODE</string>
+    <string name="payment_info">ZAHLUNGSINFORMATIONEN</string>
+    <string name="order_review">AUFTRAG REVIEW</string>
+    <string name="billing_address">RECHNUNGSADRESSE</string>
+    <string name="shipping_address">VERSANDADRESSE</string>
+    <string name="paymentMethods">Zahlungsarten</string>
+    <string name="product">PRODUKT</string>
+    <string name="subtotal">Zwischensumme: </string>
+    <string name="pay_with_paypal_standard">Zahlen Sie mit PayPal Norm</string>
+    <string name="place_order">BESTELLUNG AUFGEBEN</string>
+
+    <!-- Strings related to category pages Activity -->
+    <string name="items_found"> Produkt (e) gefunden.</string>
+
+    <!-- Strings related to Cart Activity -->
+    <string name="empty_cart_btn">Leere \ nCart</string>
+    <string name="price_label">PREIS:</string>
+    <string name="subtotal_label">Zwischensumme:</string>
+    <string name="no_item_in_cart">Sie haben keine Artikel in Ihrem Warenkorb.</string>
+    <string name="empty_cart">Der Warenkorb ist leer</string>
+    <string name="ques_move_to_wishlist">Sind Sie sicher, den Punkt zu gelangen, um die Wunschliste möchten Sie?</string>
+    <string name="apply_coupon_response">während wir Ihren Gutschein gelten</string>
+    <string name="cancel_coupon_response">während wir Ihren Gutschein Abbrechen</string>
+    <string name="are_you_sure">Bist du sicher?</string>
+    <string name="continue_shopping_btn">MIT DEM EINKAUFEN FORTFAHREN</string>
+    <string name="proceed_to_checkout">ZUR KASSE GEHEN</string>
+    <string name="update_cart">Warenkorb aktualisieren</string>
+    <string name="discound_code">RABATT-CODES</string>
+    <string name="apply">Bewerben</string>
+    <string name="move_to_wishlist">Zur Wunschliste verschieben</string>
+    <string name="qty">QTY</string>
+    <string name="qty2">QTY: </string>
+    <string name="qty3">Anz</string>
+
+    <!-- Strings related to AdvanceSearch Result Grid Activity -->
+    <string name="no_item_found_in_criteria">Es wurden keine Artikel mit der folgenden Suchkriterien gefunden.</string>
+    <string name="item_found_in_criteria">item (s) wurde mit der folgenden Suchkriterien.</string>
+
+    <!-- Strings related to AdvanceSearch Activity -->
+
+    <string name="select_one_search_term">Bitte geben Sie mindestens einen Suchbegriff ein.</string>
+    <string name="price_from">Preis ab</string>
+    <string name="price_to">Preis to </string>
+    <string name="date_from">stammen aus</string>
+    <string name="date_to">Datum  </string>
+    <string name="reset_date">Reset-Tag</string>
+
+    <!-- Strings related to Addressbook Activity -->
+    <string name="addrbook_action_title">Adressbuch</string>
+    <string name="title_activity_addr_book">Adressbuch</string>
+    <string name="addrbookHeading">Default-Adresse</string>
+    <string name="addrbookdefaultbillingHeading">Standard Rechnungsadresse</string>
+    <string name="addrbookdefaultshippingHeading">Standardlieferadresse</string>
+    <string name="additional_address_entries">ZUSATZAdressEinträge</string>
+    <string name="edit_address">Adresse bearbeiten</string>
+    <string name="delete_address">Adresse löschen</string>
+    <string name="del_your_address">Löschen Sie Ihre Adresse</string>
+    <string name="del_your_address_alert">Glauben Sie an diese Adresse gelöscht werden soll</string>
+    <string name="address_added_alert">Ihre Adresse ist erfolgreich aus dem Adressbuch gelöscht</string>
+    <string name="change_billing_add">Rechnungsadresse ändern</string>
+    <string name="change_shipping_add">Lieferadresse ändern</string>
+    <string name="add_new_add">NEUE ADRESSE HINZUFÜGEN</string>
+
+    <!-- Strings related to AccountInfo Activity -->
+    <string name="accountinfo_action_title">Kontoinformation</string>
+    <string name="accinfofirstnameTitle">Vorname</string>
+    <string name="accinfolastnameTitle">Nachname</string>
+    <string name="accinfoemailTitle">E-Mail-Addresse</string>
+    <string name="title_activity_accountinfo">Kontoinformation</string>
+    <string name="change_password">Kennwort ändern</string>
+    <string name="current_password">Aktuelles Passwort</string>
+    <string name="new_password">Neues Passwort</string>
+    <string name="confirm_password">Passwort bestätigen</string>
+    <string name="password_shud_match">Kennwort müssen übereinstimmen!</string>
+    <string name="toast_account_updated">Ihr Konto erfolgreich aktualisiert wird</string>
+
+    <!-- String relatedmenuLoginActivitymenu titles -->
+    <string name="overflow_title">Überlauf-Menü</string>
+    <string name="marketplace_title">Marketplace</string>
+    <string name="seller_dashbooard_title">Verkäufer-Dashboard</string>
+    <string name="seller_order_title">Verkäufer Sortieren</string>
+    <string name="logout_title">Abmelden</string>
+    <string name="login_title">Einloggen</string>
+
+    <!-- Strings related to Mobikul Home Page -->
+
+    <string name="featured_product_label">VORGESTELLTES PRODUKT</string>
+    <string name="new_product_label">NEUES PRODUKT</string>
+    <string name="newsletter_label">NEWSLETTER</string>
+    <string name="subscribe_button_label">ABONNIEREN</string>
+    <string name="subscribe_edittext_hint">E-Mail-Addresse</string>
+    <string name="press_back_to_exit">Klicken Sie auf Zurück zum Beenden erneut</string>
+
+    <string name="there_are_no_search_terms_available_">Es sind keine Suchbegriffe verfügbar.</string>
+    
+    <!-- String Related to navigation drawer -->
+    <string name="navigatgion_drawer_store_heading">GESCHÄFT</string>
+    <string name="navigatgion_drawer_quicklink_heading">SCHNELLE LINKS</string>
+    <string name="nav_search_terms_label">Suchbegriffe</string>
+    <string name="nav_adv_search_label">Erweiterte Suche</string>
+
+    <!-- Strings related to Mobikul Home Page -->
+  <string name="navigation_drawer_open">Öffnen Navigation Schublade</string>
+    <string name="navigation_drawer_close">Schließen Navigation Schublade</string>
+    <string name="title_activity_main">Hauptaktivität</string>
+    <string name="action_example">Beispiel Aktion</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="search_hint">Suche Produkte</string>
+    <!-- Strings related to Login Activity -->
+    <string name="login_action_title">EINLOGGEN</string>
+    <string name="title_activity_login">EINLOGGEN</string>
+    <string name="loginFormHeading">Bereits registriert?</string>
+    <string name="loginFormSubHeading">Wenn Sie ein Konto bei uns haben, bitte melden Sie sich an.</string>
+    <string name="loginFormEmailTitle">E-Mail-Addresse</string>
+    <string name="loginFormPasswordTitle">Passwort</string>
+    <string name="loginFormLoginButton">Einloggen</string>
+    <string name="alert_password_length"> muss mindestens 4 Zeichen lang sein und Führende oder nachfolgende Leerzeichen werden ignoriert.</string>
+    <string name="submit">einreichen</string>
+    <string name="message">Meldung</string>
+
+    <!-- Strings related to CreateAccount Activity -->
+    <string name="title_activity_create_account">Benutzerkonto erstellen</string>
+    <string name="signup_action_title">Anmelden</string>
+    <string name="signupFormHeading">Ein Konto erstellen</string>
+    <string name="signupFormFirstNameTitle">Vorname</string>
+    <string name="signupFormLastNameTitle">Nachname</string>
+    <string name="signupFormEmailTitle">E-Mail-Addresse</string>
+    <string name="signupFormPasswordTitle">Passwort</string>
+    <string name="signupFormConfPasswordTitle">Passwort bestätigen</string>
+    <string name="signupFormNewsletterTitle">Anmeldung für Newsletter</string>
+    <string name="signupFormRegisterTitle">Registrieren</string>
+
+    <!-- Strings related to Dashboard Activity -->
+    <string name="title_activity_dashboard">Armaturenbrett</string>
+    <string name="dashboard_action_title">Mein Dashboard</string>
+    <string name="welcomemsg">Von Ihrem Konto-Dashboard haben Sie die Möglichkeit, um einen Schnappschuss von Ihrem letzten Kontoaktivität Ihre Kontoinformationen anzeigen und aktualisieren. Wählen Sie auf den folgenden Link, um anzuzeigen oder zu bearbeiten Informationen.</string>
+    <string name="recentordersheading">letzte Bestellungen</string>
+    <string name="accountinfoheading">Kontoinformation</string>
+    <string name="contactinfoheading">Kontaktinformation</string>
+    <string name="newslettersheading">Newsletters</string>
+    <string name="addressbookheading">Adressbuch</string>
+    <string name="billingaddressheading">Standard Rechnungsadresse</string>
+    <string name="shippingaddressheading">Standardlieferadresse</string>
+    <string name="recentreviewsheading">Meine neuesten Beiträge</string>
+    <string name="editaction">redigieren</string>
+    <string name="editaction2">bearbeiten</string>
+    <string name="manageaddress">Adressen verwalten</string>
+    <string name="viewallorders">Alle Bestellungen</string>
+    <string name="viewallreviews">Alle Bewertungen ansehen</string>
+    <string name="order_id">Auftragsnummer : </string>
+    <string name="order_id2">Auftragsnummer</string>
+    <string name="date">Datum: </string>
+    <string name="ship_to">Ausliefern : </string>
+    <string name="order_total">Gesamtbestellung: </string>
+    <string name="status">Status: </string>
+    <string name="name">Name: </string>
+    <string name="view_order">Bestellung anzeigen</string>
+    <string name="no_order_placed">Sie haben kein Bestellung noch platziert</string>
+    <string name="no_review_done">Sie havn \'t überprüft noch keine Artikel</string>
+
+    <!-- Strings related to My Orders Activity -->
+    <string name="myorder_action_title">Meine Befehle</string>
+    <string name="title_activity_myorder">Meine Befehle</string>
+    <string name="reoder">nachbestellen</string>
+
+    <!-- Strings related to My Product Review Activity -->
+    <string name="myproreview_action_title">Meine Testberichte</string>
+    <string name="title_activity_my_pro_review">Meine Testberichte</string>
+
+    <!-- Strings related to My Wishlist Activity -->
+    <string name="mywishlist_action_title">Meine Wunschliste</string>
+    <string name="title_activity_my_wishlist">Meine Wunschliste</string>
+    <string name="mywishlistheading">MEINE WUNSCHLISTE</string>
+
+    <!-- Strings related to Newsletter Subscription Activity -->
+    <string name="newslettersubs_action_title">Newsletter abonnieren</string>
+    <string name="title_activity_news_letter_subs">Newsletter abonnieren</string>
+    <string name="newsletterheading">NEWSLETTER ABONNIEREN</string>
+    <string name="newsletterTitle">Allgemeine Abonnement</string>
+
+    <!-- Strings related to Category Activity -->
+    <string name="title_activity_layerednavigation">Layered Navigation</string>
+    <string name="title_activity_sorter">Sortierer</string>
+    <string name="switcher">-Umschalter</string>
+    <string name="title_activity_category">Rubrik</string>
+    <string name="title_activity_subcategory">Unterkategorie</string>
+    <string name="sort">Sortieren nach</string>
+    <string name="filter">Einkaufen nach</string>
+
+    <!-- Strings related to My Downloadable Products Activity -->
+
+    <string name="mydownloads_action_title">Meine Herunterladbare Produkte</string>
+    <string name="title_activity_my_downloads">Meine Herunterladbare Produkte</string>
+    <string name="mydownloadsheading">MY HERUNTERLADEN PRODUKTE</string>
+    <string name="not_purchased_downloadable">Sie haben keine Produkte zum Downloaden noch gekauft.</string>
+    <string name="order_no">Auftrag # </string>
+    <string name="title">Titel: </string>
+    <string name="remaining_downloads">Verbleibende Downloads: </string>
+    <string name="download_started">Herunterladen Schritte</string>
+    <string name="title_activity_search_results_grid">Katalogsuche</string>
+    <string name="title_activity_product">Produkt Aktivität</string>
+    <string name="drawer_open">Öffnen Navigation Schublade</string>
+    <string name="drawer_close">Schließen Navigation Schublade</string>
+    <string name="image">Bild</string>
+    <string name="Search">Suche</string>
+    <string name="title_activity_search_results_list">Suchergebnisliste</string>
+    <string name="title_activity_advancedsearch">Erweiterte Suche</string>
+    <string name="title_activity_review">Bewertungen</string>
+    <string name="title_activity_sorterForSearch">Sortieren nach</string>
+    <string name="action_cart">Wagen</string>
+    <string name="action_bell">Klingel</string>
+    <string name="title_activity_Cart">Wagen</string>
+    <string name="title_activity_Notification">Benachrichtigung</string>
+    <string name="title_activity_Other_Notification">andere Mitteilung</string>
+    <string name="title_activity_search_terms">Suchbegriffe</string>
+    <string name="title_activity_extending_base">Erstreckenden Basisaktivität</string>
+    <string name="title_activity_sorterForAdvancedSearch">Erweiterte Suche Sortieren</string>
+    <string name="title_activity_view_my_order">Meine Bestellung</string>
+    <string name="title_activity_review_details">Bewertungsdetails</string>
+    <string name="title_activity_splashscreen">SplashscreenActivity</string>
+    <string name="dummy_button">dummy-Knopf</string>
+    <string name="dummy_content">DUMMY \ nCONTENT</string>
+    <string name="title_activity_my_pay_pal">Meine PayPal Aktivität</string>
+    <string name="addPayment">In Zahlungs-Methode</string>
+    <string name="endingIn">Karte der Endung </string>
+    <string name="progressMessage">Erstellen von Token&#8230;</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_market_place_home">Marktplatz Startseite</string>
+    <string name="title_activity_seller_profile">Anbieterprofil</string>
+    <string name="title_activity_contact_us">Kontaktiere uns</string>
+    <string name="title_activity_mpseller_list">MP Verkäufer Liste</string>
+    <string name="title_activity_seller_dashboard">Verkäufer-Dashboard</string>
+    <string name="title_activity_mpseller_order_history">MP Verkäufer Bestellverlauf</string>
+    <string name="title_activity_invoice">Abrechnung</string>
+    <string name="title_activity_custom_download_manager">Benutzerdefinierte Download Manager</string>
+
+    <!-- Strings related to my wishlist activity -->
+    <string name="updating_wishlist">während Ihrer Wunschliste ist die Aktualisierung</string>
+    <string name="add_to_wishlist_ques">Sind Sie sicher, dass Sie möchten, um dieses Produkt von Ihrer Wunschliste löschen?</string>
+    <string name="sku">Artikelnummer: </string>
+    <string name="price">Preis: </string>
+    <string name="no_item_in_wishlist">Sie haben keine Artikel im Warenkorb.</string>
+
+    <!-- Strings related to notification activity -->
+    <string name="no_notification_to_show">Es gibt keine Meldung zu zeigen.</string>
+    <string name="notification">ANMELDUNG</string>
+    <string name="new_keyword">neu</string>
+
+    <!-- Strings related to my product review activity -->
+    <string name="product_name">Produktname : </string>
+    <string name="desciption">Beschreibung: </string>
+    <string name="view_details">DETAILS ANZEIGEN</string>
+
+    <!-- AUTO GENERATED/OTHER STRINGS -->
+    <string name="credit_memo_information">Gutschrift INFORMATIONEN</string>
+    <string name="company">Unternehmen</string>
+    <string name="telephone">Telephon</string>
+    <string name="fax">faxen</string>
+    <string name="address">ANSCHRIFT</string>
+    <string name="street_address">Adresse</string>
+    <string name="street_address_2">Strasse und Hausnummer 2</string>
+    <string name="city">Stadt</string>
+    <string name="state">Staats</string>
+    <string name="zip">Zip</string>
+    <string name="country">Land</string>
+    <string name="use_as_my_defaut_billing_address">Verwenden Sie als Standard-Rechnungsadresse</string>
+    <string name="use_as_my_defaut_shipping_address">Verwenden Sie als Standard-Lieferadresse</string>
+    <string name="save_address">"Adresse speichern"</string>
+
+    <!-- order_placed_activity.xml -->
+    <string name="your_order_has_been_received_">Ihre Bestellung eingegangen ist.</string>
+    <string name="thank_you_for_your_purchase_">VIELEN DANK FÜR IHREN EINKAUF!</string>
+    <string name="your_order_is_">"Ihre Bestellung # ist:"</string>
+    <string name="you_will_receive_an_order_confirmation_email_with_details_of_your_order_and_a_link_to_track_its_progress_">Sie erhalten eine Auftragsbestätigung per E-Mail mit Details Ihrer Bestellung und einen Link zu seinem Fortschritt zu verfolgen empfangen.</string>
+
+    <!-- other_activity.xml -->
+    <string name="other_notification">andere Mitteilung</string>
+
+    <!-- ProductDescExpListAdapter.java -->
+    <string name="total">Gesamt </string>
+    <string name="additional_info">Weitere Informationen</string>
+    <string name="be_the_first_to_review">Schreiben Sie die erste Kundenmeinung</string>
+    <string name="_customer_reviews">" Kundenbewertungen"</string>
+    <string name="be_the_first_to_review_this_product">Schreiben Sie die erste Kundenmeinung</string>
+
+    <!-- String related to product list and grid adapter -->
+
+    <string name="please_login_first">Bitte loggen Sie sich zuerst ein</string>
+    <string name="_to_">\ n \ nUm:</string>
+    <string name="as_low_as_">so niedrig wie:</string>
+    <string name="starting_at_">"beginnt um: "</string>
+    <string name="you_are_not_logged_in_please_login_to_continue">Sie sind nicht eingeloggt . Logge dich ein, um fortzufahren</string>
+    <string name="_as_low_as_">"\ nas günstig wie:"</string>
+
+    <!-- ReviewActivity.java Search Result grid and list activities -->
+    <string name="price_">"PREIS:"</string>
+    <string name="this_is_a_required_field_">Dies ist ein Pflichtfeld.</string>
+    <string name="please_select_one_of_each_of_the_ratings">Bitte wählen Sie eine von jedem der Bewertungen</string>
+    <string name="review_details">Bewertungs details</string>
+    <string name="your_rating">BEWERTUNG</string>
+    <string name="average_customer_rating_">Durchschnittliche Kundenbewertung:</string>
+    <string name="write_your_own_review">Eigene Bewertung schreiben</string>
+    <string name="how_do_you_rate_this_product">Wie bewerten Sie diesen Artikel</string>
+    <string name="let_us_know_your_thoughts">Teilen Sie uns Ihre Gedanken</string>
+    <string name="summary_of_your_review">Zusammenfassung Ihrer Kundenmeinung</string>
+    <string name="what_apos_s_your_nickname_">Welche &amp; apos; s Ihr Spitzname?</string>
+    <string name="submit_review">Bewertung abschicken</string>
+    <string name="no_items_were_found_using_the_following_search_criteria_">Es wurden keine Artikel mit der folgenden Suchkriterien gefunden.</string>
+    <string name="item_s_were_found_using_the_following_search_criteria_">item (s) wurde mit der folgenden Suchkriterien.</string>
+
+    <!-- search_terms.xml -->
+
+    <string name="popular_search_terms">Beliebte Suchbegriffe</string>
+
+    <!-- Sorter.java -->
+    <string name="sort_by">Sortieren nach</string>
+
+    <!-- SubCategoty Page -->
+
+    <string name="view_all_">"Alle anzeigen"</string>
+    <string name="sub_category">Sub-Kategorie</string>
+    <string name="view_all">ALLES ANSEHEN</string>
+    <string name="order_">"AUFTRAG# "</string>
+    <string name="shipping_address_">VERSANDADRESSE:</string>
+    <string name="shipping_method_">Verschiffen-Methode:</string>
+    <string name="billing_address_">RECHNUNGSADRESSE:</string>
+    <string name="payment_method_">ZAHLUNGSMETHODE:</string>
+
+    <!-- ViewMyOrderActivity.java -->
+    <string name="item_ordered">Eintrag Geordnete</string>
+    <string name="sku_">"SKU:"</string>
+    <string name="_shipped_">"Versandfertig:"</string>
+    <string name="_ordered_">"Befahl:"</string>
+    <string name="_canceled_">"Abgebrochen"</string>
+    <string name="_refunded_">"ERSTATTET:"</string>
+    <string name="subtotal_">"Zwischensumme:"</string>
+    <string name="about_this_order_">Diesem Auftrag:</string>
+    <string name="invoices">Rechnungen</string>
+    <string name="refunds">Rückerstattungen</string>
+    <string name="shipments">Sendungen</string>
+
+    <!-- ViewProductBundle.java -->
+    <string name="price_as_configured_">"Preis wie konfiguriert:"</string>
+    <string name="_reviews_s_">"Bewertungen (en)"</string>
+    <string name="none">keine</string>
+    <string name="maximum_number_of_characters_">"Maximale Anzahl der Zeichen:"</string>
+    <string name="allowed_file_extensions_to_upload_">"Erlaubte Dateierweiterungen zum hochladen:"</string>
+    <string name="date_">Datum:</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="select_time">Wählen Sie Zeit</string>
+    <string name="are_you_sure_you_want_to_add_item_to_wish_list_">Sind Sie sicher, um Artikel in Merkliste hinzufügen wollen?</string>
+    <string name="field_">"Feld"</string>
+    <string name="_is_not_complete_">"Nicht abgeschlossen".</string>
+    <string name="browse_">Durchsuchen ..</string>
+    <string name="no_file_selected">Keine Datei ausgewählt</string>
+    <string name="price2_">Preis:</string>
+    <string name="qty4_">Menge:</string>
+    <string name="add_to_cart">In den Einkaufswagen hinzufügen</string>
+    <string name="time_">Zeit:</string>
+    <string name="_choose_a_selection_">--Wählen Sie ein selection--</string>
+    <string name="_none_">--keine--</string>
+    <string name="_please_select_">- - Bitte auswählen- -</string>
+    <string name="product_added_to_wishlist">Produkt zur Wunschliste hinzugefügt</string>
+    <string name="product_out_of_stock">Produkt vergriffen</string>
+    <string name="download_started1">Download gestartet ...</string>
+    <string name="bundle_product_specify_qty">Bitte geben Sie die Menge des Produkts (e).</string>
+    <string name="your_product_is_successfully_added_to_your_wishlist">Ihr Produkt erfolgreich zu Ihrer Wunschliste hinzugefügt</string>
+    <string name="address_book">ADRESSBUCH</string>
+    <string name="your_name">Ihr Name</string>
+    <string name="your_email">Deine E-Mail</string>
+    <string name="subject">Subjekt</string>
+    <string name="your_query">Ihre Suchanfrage</string>
+    <string name="pwd_">"pwd: "</string>
+    <string name="select">auswählen</string>
+    <string name="invoice_information">Rechnungsinformationen</string>
+    <string name="demo123">demo123</string>
+    <string name="password_">"Passwort "</string>
+    <string name="forgot_your_password_">HABEN SIE IHR PASSWORT VERGESSEN?</string>
+
+    <!-- other string used in layouts, menus XML's -->
+    <string name="turn_your_passion_into_a_business">Schalten Sie Ihre Leidenschaft in ein Geschäft</string>
+    <string name="search_seller_by_shop_name">Suche nach Verkäufer von Geschäft Name</string>
+    <string name="search">Suche</string>
+    <string name="billtoname">Gesetzentwurf zur Namens</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="clear_all">Alles löschen</string>
+    <string name="_required_fields">*Benötigte Felder</string>
+    <string name="out_of_stock">AUSVERKAUFT</string>
+    <string name="quantity">Menge</string>
+    <string name="about_shop">Über Shop-</string>
+    <string name="remove">herausnehmen</string>
+    <string name="update_wishlist">Update Wunschzettel</string>
+    <string name="please_enter_your_comments_">Bitte geben Sie Ihre Kommentare.</string>
+    <string name="price2">Preis: </string>
+    <string name="sku2">sku</string>
+    <string name="product_name2">Produktname</string>
+    <string name="add_to_wishlist">Zur Wunschliste hinzufügen</string>
+    <string name="add_your_review">Fügen Sie Ihre Bewertung</string>
+    <string name="contact_us">Kontaktiere uns</string>
+    <string name="ask_question_to_admin_">FRAGE STELLEN dem Server-Betreiber</string>
+    <string name="amount">Höhe</string>
+    <string name="average_rating">Durchschnittliche Bewertung</string>
+    <string name="comments_amp_reviews">Kommentare und Bewertungen</string>
+    <string name="credit_memos_list">Gutschriften Liste</string>
+    <string name="date2">Datum</string>
+    <string name="filemodifydate">Datei ändern Datum</string>
+    <string name="filename">Dateiname</string>
+    <string name="filesize">Dateigröße</string>
+    <string name="your_income">IHR EINKOMMEN</string>
+    <string name="view">anzeigen</string>
+    <string name="view_all_credit_memos_">"Alle Gutschriften"</string>
+  
+    <string name="remind_later">Später daran erinnern,</string>
+    <string name="comment_and_review">Kommentare &amp; Bewertungen</string>
+    <string name="no_comment_review">kein Kommentar &amp; Rezension vorhanden</string>
+    <string name="please_enter_your_email_address_below_you_will_receive_a_link_to_reset_your_password_">Bitte geben Sie unten Ihre E-Mail-Adresse ein. Sie erhalten einen Link zum Zurücksetzen des Passworts zu erhalten.</string>
+    <string name="filter_your_order_apos_s">Grenze deine Bestellung\'s</string>
+    <string name="no_order_available_">"Keine Bestellung"</string>
+    <string name="profile">Profil</string>
+    <string name="return_policy">Rücknahmegarantie</string>
+    <string name="shipping_policy">Schifffahrtspolitik</string>
+    <string name="give_feedback">Feedback geben</string>
+    <string name="login_to_give_feedback">Loggen Sie sich ein Feedback geben</string>
+    <string name="from2">von</string>
+    <string name="status2">Status</string>
+    <string name="incrementid">Schritt Id</string>
+    <string name="order_status">Auftragsstatus</string>
+    <string name="overflowmenu">Überlauf-Menü</string>
+    <string name="marketplace">Markt</string>
+    <string name="seller_dashboard">Verkäufer-Dashboard</string>
+    <string name="seller_order">Verkäufer Sortieren</string>
+    <string name="label">Etikette</string>
+    <string name="how_do_you_rate_this_store">Wie bewerten Sie diesen Shop ein?</string>
+    <string name="latest_order">AKTUELLE BESTELLEN</string>
+    <string name="my_order_history">Meine Bestellhistorie</string>
+    <string name="on_the_social_web_">Im Social Web </string>
+    <string name="recently_added_product">Kürzlich hinzugefügt Produkte </string>
+    <string name="from_">ab:</string>
+    <string name="recent_feedbacks">JÜNGSTE RÜCKGESPRÄCHE</string>
+    <string name="return_policies">RÜCKKEHR-POLITIK</string>
+    <string name="shipping_policies">SCHIFFFAHRTSPOLITIK</string>
+    <string name="shop_by">Einkaufen nach</string>
+    <string name="reset_time">Rücksetzzeit</string>
+    <string name="product_price">Produkt Preis</string>
+    <string name="seller_collection_heading">VERKÄUFER\'S COLLECTION</string>
+    <string name="update_now">Jetzt aktualisieren</string>
+
+    <!-- Strings related to marketplace .java files -->
+
+    <string name="ask">Frag</string>
+    <string name="ask_question_to_admin">Frage stellen ADMIN</string>
+    <string name="subject_is_required_">Betreff ist erforderlich!</string>
+    <string name="query_is_required_">Abfrage ist erforderlich!</string>
+    <string name="name_is_required_">Name ist erforderlich!</string>
+    <string name="_order_creditmemos">Sortieren Creditmemos</string>
+    <string name="_ordered2_">"  Ordered: "</string>
+    <string name="_invoiced_">"  In Rechnung: "</string>
+    <string name="_shipped2_">"  geliefert: "</string>
+    <string name="_canceled2_">"  Abgebrochen: "</string>
+    <string name="_refunded2_">"  Zurückgezahlte: "</string>
+    <string name="admin_commission_">"ADMIN KOMMISSION: "</string>
+    <string name="vendor_total_">"VENDOR TOTAL: "</string>
+    <string name="_order_invoice">" Sortieren Rechnung"</string>
+    <string name="filter_by">Filtern nach</string>
+    <string name="this_is_a_required_field">Dies ist ein Pflichtfeld</string>
+    <string name="my_orders_history">Meine Bestellungen History</string>
+    <string name="price3">Preis</string>
+    <string name="value">Wert</string>
+    <string name="quality">Qualität</string>
+    <string name="sorry_unable_to_create_maps">Es tut uns leid! nicht in der Lage Karten zu erstellen</string>
+    <string name="_collection">" Sammlung"</string>
+    <string name="total_">"Gesamt "</string>
+    <string name="filter_your_order_list">Filtern Sie Ihre Bestellliste</string>
+    <string name="all">All</string>
+    <string name="canceled">Abgebrochen</string>
+    <string name="closed">geschlossen</string>
+    <string name="complete">Komplette</string>
+    <string name="suspected_fraud">Betrugsverdacht</string>
+    <string name="on_hold">On Hold</string>
+    <string name="payment_review">Payment Bewertung</string>
+    <string name="paypal_canceled_reversal">PayPal Abgebrochen Reversal</string>
+    <string name="paypal_reversed">Paypal Umge</string>
+    <string name="pending">Bis</string>
+    <string name="pending_payment">Erwartung der Zahlung</string>
+    <string name="pending_paypal">Schwebende Paypal</string>
+    <string name="processing">Verarbeitung</string>
+    <string name="make_a_review">Erstellen Sie eine REVIEW</string>
+    <string name="shipment_information">Versandinformationen</string>
+    <string name="carrier">CARRIER</string>
+    <string name="tracking_number">TRACKING-Nummer</string>
+    <string name="assign_product">Vergeben Produkt</string>
+    <string name="assign_product_list">Vergeben Artikelliste</string>
+    <string name="sell_yours">VERKAUFEN IHR</string>
+    <string name="add_a_product">Eine Artikel</string>
+    <string name="enter_your_product_name_hint_assign">Geben Sie den Produktnamen</string>
+
+  <string name="prod_return">Product Returns</string>
+  <string name="view_more1">View More Product</string>
+
+  <string name="latest_prd">Latest Products</string>
+  <string name="categories_lbl">Categories</string>
+  <string name="browse_prd">Browse Products By Brands</string>
+  <string name="category_search">Category</string>
+
+</resources>

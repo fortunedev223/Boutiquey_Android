@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/home_menu"
+        android:checkableBehavior="single"
+        android:orderInCategory="0" />
+
+    <group
+        android:id="@+id/customer_menu"
+        android:checkableBehavior="single"
+        android:orderInCategory="1">
+
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/icon_dashboard"
+            android:title="@string/dashboard_action_title" />
+        <item
+            android:id="@+id/accountinfo"
+            android:icon="@drawable/icon_information"
+            android:title="@string/accountinfo_action_title" />
+        <item
+            android:id="@+id/addrbook"
+            android:icon="@drawable/icon_contact"
+            android:title="@string/addrbook_action_title" />
+
+        <item
+            android:id="@+id/myorders"
+            android:icon="@drawable/icon_my_order"
+            android:title="@string/myorder_action_title" />
+
+        <item
+            android:id="@+id/newslettersubs"
+            android:icon="@drawable/icon_newsletter"
+            android:title="@string/newslettersubs_action_title" />
+        <item
+            android:id="@+id/mydownloads"
+            android:icon="@drawable/icon_download"
+            android:title="@string/mydownloads_action_title" />
+
+
+        <!--Add switch compat rather than fragment-->
+
+        <!--MarketplmenuMainActivitymenu-->
+
+        <item
+            android:id="@+id/market"
+            android:checkable="true"
+            android:title="MarketPlace"
+            android:visible="false">
+            <menu>
+                <item
+                    android:id="@+id/marketPlace"
+                    android:icon="@drawable/icon_marketplace"
+                    android:title="@string/marketplace"
+                    android:visible="false"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/sellerDashboard"
+                    android:icon="@drawable/icon_dashboard"
+                    android:title="@string/seller_dashboard"
+                    android:visible="false"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/sellerOrder"
+                    android:icon="@drawable/icon_seller_order"
+                    android:title="@string/seller_order"
+                    android:visible="false"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/asktoadmin"
+                    android:icon="@drawable/ask_to_admin"
+                    android:title="@string/ask_question_to_admin"
+                    android:visible="false"
+                    app:showAsAction="never" />
+
+            </menu>
+        </item>
+
+    </group>
+
+
+    <group
+        android:id="@+id/categories"
+        android:checkableBehavior="single"
+        android:orderInCategory="2" />
+
+    <group
+        android:id="@+id/store_menu"
+        android:orderInCategory="3">
+        <menu>
+            <group android:id="@+id/store_sub_menu" />
+            <!--<item-->
+            <!--android:id="@+id/store"-->
+            <!--android:icon="@drawable/icon_store"-->
+            <!--android:orderInCategory="2"-->
+            <!--android:title="Language" />-->
+        </menu>
+    </group>
+
+    <group
+        android:id="@+id/currency_menu"
+
+        android:orderInCategory="4">
+        <menu>
+            <group android:id="@+id/currency_sub_menu" />
+            <!--<item-->
+            <!--android:id="@+id/currency"-->
+            <!--android:orderInCategory="3"-->
+            <!--android:title="Currency" />-->
+        </menu>
+    </group>
+
+</menu>

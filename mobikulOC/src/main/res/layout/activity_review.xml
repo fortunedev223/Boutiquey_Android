@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:stackFromBottom="true"
+    android:transcriptMode="alwaysScroll" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/allReviewsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/dark_primary_color"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#E2DEDD"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="1dp" >
+
+                <LinearLayout
+                    android:id="@+id/imageViewLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/placeholder"
+                        android:focusable="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productName"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/imageView2" />
+
+            <TableLayout
+                android:id="@+id/productRatingContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productPrice"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/imageView2"
+                android:orientation="vertical"
+                android:visibility="gone" >
+            </TableLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.75dp"
+                android:background="#818185"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/totalReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.75dp"
+                android:background="#818185"
+                android:padding="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/reviewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp" >
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/firstReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/be_the_first_to_review_this_product"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ownReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/write_a_review"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/myContainerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="@string/how_do_you_rate_this_product"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <!-- form layout for setting the rating of various option field available -->
+
+            <LinearLayout
+                android:id="@+id/formLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone" >
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.75dp"
+                android:background="#818185"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/your_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/your_name"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/your_name_field"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/review_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                    android:text="@string/summary_of_your_review"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/sammaryField"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/your_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/your_review"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/your_review_field"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" />
+
+            <TextView
+                android:id="@+id/your_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/rating"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/ratingLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:background="@color/dark_primary_color"
+                android:clickable="true"
+                android:padding="5dp"
+                android:text="@string/submit_review"
+                android:textColor="#FFFFFF" >
+            </Button>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/reviewlistprogress"
+            style="\?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

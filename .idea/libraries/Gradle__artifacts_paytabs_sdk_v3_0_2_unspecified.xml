@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:paytabs_sdk-v3.0.2:unspecified">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09076d50be4b4ea8b17362d5be8b606c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09076d50be4b4ea8b17362d5be8b606c/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09076d50be4b4ea8b17362d5be8b606c/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

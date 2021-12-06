@@ -1,0 +1,105 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import
+            alias="project"
+            type="webkul.opencart.mobikul.BuildConfig" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.CheckoutBottomSheetHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_btn_bg_pressed_color"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="@string/checkout_as"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#3B5999"
+                android:onClick="@{(v)->handler.onClickFaceBook()}"
+                android:padding="@dimen/padding"
+                android:text="@string/sign_in_with_facebook"
+                android:textSize="@dimen/heading_size_medium"
+                android:visibility="@{project.isDemo ? View.VISIBLE : View.GONE}" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_elevetion_2"
+                android:layout_marginTop="@dimen/card_elevetion_2"
+                android:backgroundTint="#D34837"
+                android:onClick="@{(v)->handler.onClickGoogle()}"
+                android:padding="@dimen/padding"
+                android:text="@string/sign_in_with_google"
+                android:textSize="@dimen/heading_size_medium"
+                android:visibility="@{project.isDemo ? View.VISIBLE : View.GONE}" />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_elevetion_2"
+                android:onClick="@{(v)->handler.onClickLogin(v)}"
+                android:padding="@dimen/padding"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                app:background="@drawable/checkout_bottom_popup" />
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_elevetion_2"
+                android:onClick="@{(v)->handler.onClickRegister(v)}"
+                android:padding="@dimen/padding"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                app:background="@drawable/checkout_bottom_popup" />
+
+            <Button
+                android:id="@+id/guest_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->handler.onClickGuest(v)}"
+                android:padding="@dimen/padding"
+                android:text="@string/continue_as_a_guest"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium"
+                app:background="@drawable/checkout_bottom_popup" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

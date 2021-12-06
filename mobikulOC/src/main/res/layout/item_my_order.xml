@@ -1,0 +1,253 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.R.color" />
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.SellerOrderAdapterModel" />
+
+        <variable
+            name="handler"
+            type="webkul.opencart.mobikul.handlers.SellerOrderHandler" />
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        card_view:cardCornerRadius="@dimen/card_elevetion_4"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/container_in_card_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5x">
+
+                <TextView
+                    android:id="@+id/order"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:text="@string/order_id_b"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/myorderId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".4"
+                    android:text="@{'#'+data.orderId}"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/heading_size_medium"
+                    android:textStyle="bold" />
+
+                <android.support.design.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:onClick="@{(v)->handler.onClickOrder(v,data)}"
+                    android:padding="@dimen/padding_6"
+                    android:text="@string/view_details"
+                    android:textColor="@color/white"
+                    card_view:cornerRadius="@dimen/margin_8" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/light_border_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="2dp"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/myview"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:id="@+id/floatingvieworder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:clickable="true"
+                    android:onClick="@{(v)->handler.onClickOrder(v,data)}"
+                    android:src="@drawable/viewpage" />
+            </RelativeLayout>
+
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/margin5x"
+                        android:text="@string/placed_on"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/myorderdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingRight="@dimen/padding_heading"
+                        android:text="@{data.date}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="@dimen/card_elevetion_2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/margin5x"
+                        android:text="@string/ship_to"
+                        android:textColor="@color/gray" />
+
+
+                    <TextView
+                        android:id="@+id/myorderCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingRight="@dimen/padding_heading"
+                        android:text="@{data.customer}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/myorderordertotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingRight="@dimen/padding_heading"
+                        android:text="@{data.total}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/status"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/myorderstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_heading"
+                        android:paddingRight="@dimen/padding_heading"
+                        android:text="@{data.status}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/noOfProRow"
+                    android:padding="5dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="@string/no_of_products"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text=" : "
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/no_of_products"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:text="@{data.noOfProducts}"
+                        android:textColor="@color/gray"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/recentreviewsheadinglayout"
+                android:layout_marginBottom="15dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>

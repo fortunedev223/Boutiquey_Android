@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.adapterModel.CartTotalAdapterModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:paddingBottom="@dimen/margin5x"
+            android:paddingLeft="@dimen/margin5x"
+            android:paddingRight="@dimen/margin5x"
+            android:paddingTop="@dimen/margin5x"
+            android:text="@{data.productPriceTitle}"
+            android:textAlignment="viewStart"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
+            tools:text="Sub-Total" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=": " />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="5.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingBottom="@dimen/margin5x"
+            android:paddingLeft="@dimen/margin5x"
+            android:paddingRight="@dimen/margin5x"
+            android:paddingTop="@dimen/margin5x"
+            android:text="@{data.productPriceText}"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
+            tools:text="$300" />
+
+    </LinearLayout>
+</layout>

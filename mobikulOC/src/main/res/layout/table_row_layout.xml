@@ -1,0 +1,47 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TableRow
+        android:id="@+id/tableRowHeadingLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tableData1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/table_border"
+            android:gravity="center"
+            android:padding="@dimen/padding"
+            android:text="@string/date_added"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/tableData2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/table_border"
+            android:gravity="center"
+            android:padding="@dimen/padding"
+            android:text="@string/description"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/tableData3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/table_border"
+            android:gravity="center|end"
+            android:padding="@dimen/padding"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/text_size_small" />
+    </TableRow>
+</layout>

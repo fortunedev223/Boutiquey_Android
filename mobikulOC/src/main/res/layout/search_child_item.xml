@@ -1,0 +1,67 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="webkul.opencart.mobikul.CategoryName" />
+
+
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin5x"
+        android:layout_marginStart="@dimen/margin5x"
+        android:background="@color/white"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:padding="@dimen/padding"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_lebel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:letterSpacing=".05"
+                android:text="@{data.categoryName}"
+                android:textColor="@color/secondary_text_color"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/margin5x">
+
+                <TextView
+                    android:id="@+id/item_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/first_item_text"
+                    android:textColor="@color/blue_btn_bg_color"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/child_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin5x" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
